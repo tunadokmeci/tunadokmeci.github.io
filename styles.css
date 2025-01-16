@@ -121,3 +121,38 @@ footer {
   padding: 10px 0;
   border-top: 1px solid #ddd;
 }
+
+/* Default desktop layout */
+.page-container {
+  display: flex;
+}
+
+/* Sidebar with a fixed width, content expands */
+.sidebar {
+  width: 220px;
+  border-right: 1px solid #ddd;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* MOBILE VIEW (max 768px) */
+@media (max-width: 768px) {
+  /* Stacks sidebar on top of content */
+  .page-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;       /* full width */
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
