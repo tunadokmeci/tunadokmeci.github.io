@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: Garamond,serif;
+  font-family: Garamond, serif;
   font-size: 20px; /* or 1rem, 1em, etc. */
   color: #333333;
   background-color: #f9f9f9;
@@ -24,6 +24,7 @@ header h1 {
   font-size: 2.5rem;
   margin-bottom: 5px;
 }
+
 header p {
   font-size: 2rem;
   color: #777;
@@ -32,13 +33,10 @@ header p {
 /* Page Container */
 .page-container {
   display: flex;
-  /* Existing rules like min-height, etc. */
-  
-  /* Add a gap between the sidebar and content */
-  gap: 40px; /* or 2em, 20px, whatever you prefer */
+  gap: 40px; /* space between sidebar and content on desktop */
 }
 
-/* Sidebar on the left (optional) */
+/* Sidebar on the left */
 .sidebar {
   width: 220px;
   background-color: #f9f9f9;
@@ -59,6 +57,7 @@ header p {
   text-decoration: none;
   color: #333;
 }
+
 .sidebar ul li a.active,
 .sidebar ul li a:hover {
   font-weight: bold;
@@ -67,7 +66,7 @@ header p {
 
 /* Main Content */
 .content {
-  flex: 1; 
+  flex: 1;
   padding: 20px;
 }
 
@@ -77,24 +76,23 @@ header p {
   flex-wrap: wrap;  /* allows wrapping on small screens */
   gap: 20px;        /* space between columns */
   margin-bottom: 40px;
-  margin-left:20px;
-  margin-right:40px;
-
+  margin-left: 20px;
+  margin-right: 40px;
 }
 
 .bio-photo {
-  flex: 0 0 500px; /* was 250px */
+  flex: 0 0 500px; /* was 250px, changed to 500px */
   text-align: center;
 }
+
 .bio-photo img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
 }
 
-
 .bio-text {
-  flex: 1;          /* take remaining space for text column */
+  flex: 1; /* take remaining space for text column */
   line-height: 1.6;
 }
 
@@ -104,15 +102,13 @@ header p {
   color: #444;
 }
 
-
 /* Increase line-height for paragraphs and list items */
 p, li {
-  line-height: 1.8; /* Adjust to desired spacing: 1.5, 1.8, 2.0, etc. */
+  line-height: 1.8; /* Adjust as desired */
 }
 
-
 .content section {
-  margin-bottom: 2em; /* or 40px, 3em, etc., to taste */
+  margin-bottom: 2em; /* or 40px, 3em, etc. */
 }
 
 /* Footer */
@@ -138,21 +134,91 @@ footer {
   padding: 20px;
 }
 
-/* MOBILE VIEW (max 768px) */
+/* ======================================== */
+/* NEW OR MODIFIED CODE FOR MOBILE STYLES  */
+/* ======================================== */
+
+/* HAMBURGER BUTTON */
+.hamburger {
+  display: none;           /* hidden by default on desktop */
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #333;
+  margin: 10px 20px;       /* some spacing */
+  align-self: flex-start;  /* ensure it's at top-left in mobile layout */
+}
+
+/* If you want the hamburger on the header's right side, adjust the alignment or place it inside header instead. */
+
+/* MEDIA QUERY for mobile screens */
 @media (max-width: 768px) {
-  /* Stacks sidebar on top of content */
+  /* Force everything to stack in one column */
   .page-container {
     flex-direction: column;
+    gap: 0; /* no horizontal gap since we stack vertically now */
   }
 
+  /* Hide the sidebar by default on mobile */
   .sidebar {
-    width: 100%;       /* full width */
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 20px;
+    position: fixed;          /* so it can slide out from the left */
+    top: 0;
+    left: -240px;             /* hide it off-screen to the left */
+    width: 220px;
+    height: 100%;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    transition: left 0.3s ease; 
+    z-index: 999;             /* on top of other elements */
   }
 
+  /* When the sidebar is "open", we'll shift it into view */
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* The hamburger button is displayed on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  /* The main content is still below the header, but we give it some top margin 
+     so content isn't hidden behind the fixed sidebar if it slides in. */
   .content {
-    width: 100%;
+    margin-top: 60px; /* adjust as needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .bio-photo {
+    flex: 0 0 100%;       /* Allow photo section to be full-width on mobile */
+    max-width: 100%;      /* So it won't exceed the screen width */
+  }
+  .bio-photo img {
+    width: 100%;          /* Make sure the image itself scales down */
+    height: auto;         /* Preserve aspect ratio */
+    
+  }
+}
+
+@media (max-width: 768px) {
+  .bio-section {
+    margin-top: 1px; /* or 0; reduce gap */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* or 16px, whatever feels right for mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
   }
 }

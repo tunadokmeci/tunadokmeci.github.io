@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +10,16 @@
 </head>
 <body>
 
+
   <!-- (Optional) Header -->
   <header>
     <h1>Tuna Dökmeci</h1>
   </header>
 
-  <div class="page-container">
-    
+   <div class="page-container">
+     <!-- HAMBURGER MENU BUTTON (hidden on desktop, visible on mobile) -->
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+
     <!-- (Optional) Left Sidebar -->
     <aside class="sidebar">
       <nav>
@@ -34,7 +39,7 @@
       <section class="bio-section">
         <div class="bio-photo">
           <!-- Replace 'photo.jpg' with your actual image file name -->
-          <img src="photo.JPG" alt="Tuna Dökmeci" />
+          <img src="photo.jpg" alt="Tuna Dökmeci" />
         </div>
         <div class="bio-text">
           <h2>Welcome!</h2>
@@ -63,3 +68,9 @@
   </footer>
 </body>
 </html>
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('open');
+  }
+</script>

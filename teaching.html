@@ -14,7 +14,9 @@
   </header>
 
   <div class="page-container">
-    
+     <!-- HAMBURGER MENU BUTTON (hidden on desktop, visible on mobile) -->
+  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+
     <!-- Left Sidebar -->
     <aside class="sidebar">
       <nav>
@@ -55,3 +57,9 @@
 
 </body>
 </html>
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('open');
+  }
+</script>
