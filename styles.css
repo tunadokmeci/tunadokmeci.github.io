@@ -1,0 +1,123 @@
+/* Reset and basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Garamond,serif;
+  font-size: 20px; /* or 1rem, 1em, etc. */
+  color: #333333;
+  background-color: #f9f9f9;
+}
+
+/* (Optional) Header styling */
+header {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 40px; /* or 1rem, 1em, etc. */
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+header p {
+  font-size: 2rem;
+  color: #777;
+}
+
+/* Page Container */
+.page-container {
+  display: flex;
+  /* Existing rules like min-height, etc. */
+  
+  /* Add a gap between the sidebar and content */
+  gap: 40px; /* or 2em, 20px, whatever you prefer */
+}
+
+/* Sidebar on the left (optional) */
+.sidebar {
+  width: 220px;
+  background-color: #f9f9f9;
+  min-height: calc(100vh - 80px);
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Main Content */
+.content {
+  flex: 1; 
+  padding: 20px;
+}
+
+/* Two-column bio section */
+.bio-section {
+  display: flex;
+  flex-wrap: wrap;  /* allows wrapping on small screens */
+  gap: 20px;        /* space between columns */
+  margin-bottom: 40px;
+  margin-left:20px;
+  margin-right:40px;
+
+}
+
+.bio-photo {
+  flex: 0 0 500px; /* was 250px */
+  text-align: center;
+}
+.bio-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+
+.bio-text {
+  flex: 1;          /* take remaining space for text column */
+  line-height: 1.6;
+}
+
+.bio-text h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+
+/* Increase line-height for paragraphs and list items */
+p, li {
+  line-height: 1.8; /* Adjust to desired spacing: 1.5, 1.8, 2.0, etc. */
+}
+
+
+.content section {
+  margin-bottom: 2em; /* or 40px, 3em, etc., to taste */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
