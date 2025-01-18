@@ -70,45 +70,18 @@ header p {
   padding: 20px;
 }
 
-/* Section Card Styling */
-.section-card {
-  background: #ffffff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.section-card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #0077cc;
-  border-bottom: 2px solid #ddd;
+/* Classification Styling */
+.classification {
+  display: block; /* Forces the classification to appear on its own line */
+  margin-top: 30px; /* Space above the classification for separation */
+  margin-bottom: 10px; /* Space below the classification */
+  font-size: 1.2rem; /* Slightly larger font for classification */
+  color: #0077cc; /* Optional: Make it a subtle blue */
+  font-weight: bold;
+  text-transform: uppercase; /* Optional: Makes the classification text uppercase */
+  border-bottom: 1px solid #ddd; /* Optional: Adds a subtle underline for visual separation */
   padding-bottom: 5px;
 }
-
-.section-card ul {
-  list-style: none;
-  margin-top: 10px;
-}
-
-.section-card ul li {
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.section-card ul li strong {
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.section-card ul li span {
-  display: block;
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 5px;
-}
-
 /* Bio Section */
 .bio-section {
   display: flex;
