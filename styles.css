@@ -30,14 +30,19 @@ header p {
   color: #5d0404;
 }
 
+/* Header Link Styling */
 .header-link {
   text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from parent styles */
+  color: inherit; /* Use the same color as the header text */
+  cursor: pointer; /* Keep it clickable */
 }
 
 .header-link:hover {
   text-decoration: none; /* Prevent underline on hover */
+  color: inherit; /* Prevent color change on hover */
 }
+
+
 
 /* Page Container */
 .page-container {
