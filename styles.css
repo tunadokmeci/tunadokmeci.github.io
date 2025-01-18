@@ -9,7 +9,7 @@ body {
   font-family: 'Garamond', serif;
   font-size: 20px; /* Base font size for desktop */
   color: #333333;
-  background-color: #f9f9f9;
+  background-color: #ffffff;;
 }
 
 /* Header styling */
@@ -39,7 +39,7 @@ header p {
 /* Sidebar on the left */
 .sidebar {
   width: 220px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   min-height: calc(100vh - 80px);
   padding: 20px;
   border-right: 1px solid #ddd;
@@ -61,7 +61,7 @@ header p {
 .sidebar ul li a.active,
 .sidebar ul li a:hover {
   font-weight: bold;
-  color: #0077cc;
+  color: #5d0404;
 }
 
 /* Main Content */
@@ -82,7 +82,7 @@ header p {
 .section-card h2 {
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: #0077cc;
+  color: #5d0404;
   border-bottom: 2px solid #ddd;
   padding-bottom: 5px;
 }
