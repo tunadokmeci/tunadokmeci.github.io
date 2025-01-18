@@ -13,9 +13,10 @@
     <h1>Tuna Dökmeci</h1>
   </header>
 
-  <div class="page-container">
-     <!-- HAMBURGER MENU BUTTON (hidden on desktop, visible on mobile) -->
+  <!-- HAMBURGER MENU BUTTON -->
   <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+
+  <div class="page-container">
 
     <!-- Left Sidebar -->
     <aside class="sidebar">
@@ -24,7 +25,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html" class="active">Research</a></li>
           <li><a href="teaching.html">Teaching</a></li>
-                    <li><a href="cv.html">CV</a></li>
+          <li><a href="cv.html">CV</a></li>
         </ul>
       </nav>
     </aside>
@@ -33,54 +34,54 @@
     <main class="content">
 
       <!-- Work in Progress -->
-      <section>
+      <div class="section-card">
         <h2>Work in Progress</h2>
         <ul>
           <li>
             <strong>Effects of State Aid on Firm Performance: Evidence from 22 EU Countries</strong><br/>
-            with Andrea Brasili, Annamaria Tueske, and Jochen Schanz
+            <span>with Andrea Brasili, Annamaria Tueske, and Jochen Schanz</span>
           </li>
           <li>
             <strong>The Ripple Effect: Children's Job Insecurity and Parents' Labour and Consumption</strong><br/>
-            with Elena Lazzaro
+            <span>with Elena Lazzaro</span>
           </li>
           <li>
-<strong>Sectoral Policies in the EU</strong><br/>
-            with Guido Bongioanni
+            <strong>Sectoral Policies in the EU</strong><br/>
+            <span>with Guido Bongioanni</span>
           </li>
           <li>
-
             <strong>Labour Demand and Firing Costs in a Cournot Duopoly</strong>
           </li>
         </ul>
-      </section>
+      </div>
 
       <!-- Pre-PhD Work -->
-      <section>
+      <div class="section-card">
         <h2>Pre-PhD Work</h2>
         <ul>
           <li>
             <strong>The Effect of Basic Income Grants on Fertility</strong><br/>
-            with Carla Rainer and Alyssa Schneebaum. 
-            <em>Canadian Public Policy / Analyse de Politiques</em>, 2023
+            <span>with Carla Rainer and Alyssa Schneebaum. 
+            <em>Canadian Public Policy / Analyse de Politiques</em>, 2023</span><br/>
+            <a href="https://muse.jhu.edu/pub/50/article/908207" target="_blank" rel="noopener">Read the journal article</a>
           </li>
         </ul>
-      </section>
+      </div>
 
       <!-- Policy Work -->
-      <section>
+      <div class="section-card">
         <h2>Policy Work</h2>
         <ul>
           <li>
             <strong>Public Investment and Industrial Policy: A Case for More European Union Coordination</strong><br/>
-            with Andrea Brasili, Atanas Kolev, Debora Revoltella, Jochen Schanz, Annamaria Tueske, and Wouter Van Der Wiele.  
-            Chapter in <em>Investing in the Structural Transformation: 2024 European Public Investment Outlook</em> (pp. 13–30).
+            <span>with Andrea Brasili, Atanas Kolev, Debora Revoltella, Jochen Schanz, Annamaria Tueske, and Wouter Van Der Wiele.<br/>
+            Chapter in <em>Investing in the Structural Transformation: 2024 European Public Investment Outlook</em> (pp. 13–30).</span><br/>
+            <a href="https://www.openbookpublishers.com/books/10.11647/obp.0434/chapters/10.11647/obp.0434.02" target="_blank" rel="noopener">Read the chapter</a>
           </li>
         </ul>
-      </section>
+      </div>
 
     </main>
-
   </div> <!-- .page-container -->
 
   <!-- FOOTER -->
@@ -88,11 +89,13 @@
     <p>&copy; 2025 Tuna Dökmeci. All rights reserved.</p>
   </footer>
 
+  <!-- Sidebar Toggle Script -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('open');
+    }
+  </script>
+
 </body>
 </html>
-<script>
-  function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('open');
-  }
-</script>
