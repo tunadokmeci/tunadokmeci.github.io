@@ -196,3 +196,36 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+/* CV Button Styling */
+.cv-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333333;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Space above the button */
+}
+
+.cv-button i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.cv-button:hover {
+  background-color: #555555;
+}
+
+.cv-button:focus {
+  outline: 2px solid #555555; /* Visible focus outline for accessibility */
+  outline-offset: 2px;
+}
+
+/* Responsive CV Button on Mobile */
+@media (max-width: 768px) {
+  .cv-button {
+    width: 100%; /* Make the button full-width on mobile */
+    text-align: center;
+  }
+}
