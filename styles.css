@@ -7,22 +7,22 @@
 
 body {
   font-family: Garamond, serif;
-  font-size: 20px; /* or 1rem, 1em, etc. */
+  font-size: 20px; /* Base font size for desktop */
   color: #333333;
   background-color: #f9f9f9;
 }
 
-/* (Optional) Header styling */
+/* Header styling */
 header {
   text-align: center;
   padding: 40px 0;
-  font-size: 40px; /* or 1rem, 1em, etc. */
+  font-size: 40px; /* This is overridden by header h1 below */
   border-bottom: 1px solid #ddd;
 }
 
 header h1 {
   font-size: 2.5rem;
-  margin-bottom: 5px;
+  margin-bottom: 20px; /* Increased spacing below h1 */
 }
 
 header p {
@@ -33,7 +33,7 @@ header p {
 /* Page Container */
 .page-container {
   display: flex;
-  gap: 40px; /* space between sidebar and content on desktop */
+  gap: 40px; /* Space between sidebar and content on desktop */
 }
 
 /* Sidebar on the left */
@@ -73,15 +73,15 @@ header p {
 /* Two-column bio section */
 .bio-section {
   display: flex;
-  flex-wrap: wrap;  /* allows wrapping on small screens */
-  gap: 20px;        /* space between columns */
+  flex-wrap: wrap;  /* Allows wrapping on small screens */
+  gap: 20px;        /* Space between columns */
   margin-bottom: 40px;
   margin-left: 20px;
   margin-right: 40px;
 }
 
 .bio-photo {
-  flex: 0 0 500px; /* was 250px, changed to 500px */
+  flex: 0 0 500px; /* Fixed width on desktop */
   text-align: center;
 }
 
@@ -92,12 +92,12 @@ header p {
 }
 
 .bio-text {
-  flex: 1; /* take remaining space for text column */
-  line-height: 1.6;
+  flex: 1; /* Takes remaining space for text column */
+  line-height: 1.8; /* Increased line-height for better readability */
 }
 
 .bio-text h2 {
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Increased spacing below h2 */
   font-size: 1.5rem;
   color: #444;
 }
@@ -108,7 +108,7 @@ p, li {
 }
 
 .content section {
-  margin-bottom: 2em; /* or 40px, 3em, etc. */
+  margin-bottom: 2em; /* Space between sections */
 }
 
 /* Footer */
@@ -118,103 +118,77 @@ footer {
   border-top: 1px solid #ddd;
 }
 
-/* Default desktop layout */
-.page-container {
-  display: flex;
-}
-
-/* Sidebar with a fixed width, content expands */
-.sidebar {
-  width: 220px;
-  border-right: 1px solid #ddd;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-}
-
-/* ======================================== */
-/* NEW OR MODIFIED CODE FOR MOBILE STYLES  */
-/* ======================================== */
-
 /* HAMBURGER BUTTON */
 .hamburger {
-  display: none;           /* hidden by default on desktop */
+  display: none;           /* Hidden by default on desktop */
   cursor: pointer;
   font-size: 1.5rem;
   background: none;
   border: none;
   color: #333;
-  margin: 10px 20px;       /* some spacing */
-  align-self: flex-start;  /* ensure it's at top-left in mobile layout */
+  margin: 10px 20px;       /* Some spacing */
+  align-self: flex-start;  /* Ensure it's at top-left in mobile layout */
 }
-
-/* If you want the hamburger on the header's right side, adjust the alignment or place it inside header instead. */
 
 /* MEDIA QUERY for mobile screens */
 @media (max-width: 768px) {
-  /* Force everything to stack in one column */
+  /* Stack layout vertically */
   .page-container {
     flex-direction: column;
-    gap: 0; /* no horizontal gap since we stack vertically now */
+    gap: 0; /* Remove horizontal gap */
   }
 
   /* Hide the sidebar by default on mobile */
   .sidebar {
-    position: fixed;          /* so it can slide out from the left */
+    position: fixed;          /* Allows it to slide out from the left */
     top: 0;
-    left: -240px;             /* hide it off-screen to the left */
+    left: -240px;             /* Hide it off-screen to the left */
     width: 220px;
     height: 100%;
     background-color: #f9f9f9;
     border-right: 1px solid #ddd;
     transition: left 0.3s ease; 
-    z-index: 999;             /* on top of other elements */
+    z-index: 999;             /* On top of other elements */
   }
 
-  /* When the sidebar is "open", we'll shift it into view */
+  /* When the sidebar is "open", shift it into view */
   .sidebar.open {
     left: 0;
   }
 
-  /* The hamburger button is displayed on mobile */
+  /* Display the hamburger button on mobile */
   .hamburger {
     display: block;
   }
 
-  /* The main content is still below the header, but we give it some top margin 
-     so content isn't hidden behind the fixed sidebar if it slides in. */
+  /* Adjust main content to prevent overlap with fixed sidebar */
   .content {
-    margin-top: 60px; /* adjust as needed */
+    margin-top: 60px; /* Adjust as needed */
   }
-}
 
-@media (max-width: 768px) {
+  /* Make the bio-photo section full-width on mobile */
   .bio-photo {
     flex: 0 0 100%;       /* Allow photo section to be full-width on mobile */
-    max-width: 100%;      /* So it won't exceed the screen width */
+    max-width: 100%;      /* Prevent overflow */
+    margin-top: 0;        /* Reduce gap */
   }
+
   .bio-photo img {
-    width: 100%;          /* Make sure the image itself scales down */
+    width: 100%;          /* Ensure image scales down */
     height: auto;         /* Preserve aspect ratio */
-    
   }
-}
 
-@media (max-width: 768px) {
+  /* Reduce top margin of bio-section */
   .bio-section {
-    margin-top: 1px; /* or 0; reduce gap */
+    margin-top: 10px; /* Reduced from 1px */
   }
-}
 
-@media (max-width: 768px) {
+  /* Reduce base font size on mobile for better readability */
   body {
-    font-size: 16px; /* or 16px, whatever feels right for mobile */
+    font-size: 16px; /* Adjust as desired */
   }
-}
 
-@media (max-width: 768px) {
+  /* Adjust heading sizes on mobile */
   h1 {
     font-size: 2rem;
   }
