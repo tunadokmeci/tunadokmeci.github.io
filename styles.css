@@ -268,3 +268,23 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+/* Style for clickable links */
+ul li a {
+  color: #0077cc; /* Blue for links */
+  text-decoration: none; /* Remove underline by default */
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth hover effect */
+}
+
+ul li a:hover {
+  color: #0055aa; /* Darker blue on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Style for non-clickable strong tags */
+ul li strong {
+  color: #333; /* Regular dark color */
+  font-weight: bold;
+  text-decoration: none; /* Ensure no underline */
+}
