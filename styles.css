@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: Garamond, serif;
+  font-family: 'Garamond', serif;
   font-size: 20px; /* Base font size for desktop */
   color: #333333;
   background-color: #f9f9f9;
@@ -16,7 +16,7 @@ body {
 header {
   text-align: center;
   padding: 40px 0;
-  font-size: 40px; /* This is overridden by header h1 below */
+  background: #ffffff;
   border-bottom: 1px solid #ddd;
 }
 
@@ -61,7 +61,7 @@ header p {
 .sidebar ul li a.active,
 .sidebar ul li a:hover {
   font-weight: bold;
-  text-decoration: underline;
+  color: #0077cc;
 }
 
 /* Main Content */
@@ -70,11 +70,50 @@ header p {
   padding: 20px;
 }
 
-/* Two-column bio section */
+/* Section Card Styling */
+.section-card {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #0077cc;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.section-card ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.section-card ul li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.section-card ul li strong {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.section-card ul li span {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Bio Section */
 .bio-section {
   display: flex;
-  flex-wrap: wrap;  /* Allows wrapping on small screens */
-  gap: 20px;        /* Space between columns */
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 20px; /* Space between columns */
   margin-bottom: 40px;
   margin-left: 20px;
   margin-right: 40px;
@@ -120,81 +159,14 @@ footer {
 
 /* HAMBURGER BUTTON */
 .hamburger {
-  display: none;           /* Hidden by default on desktop */
+  display: none; /* Hidden by default on desktop */
   cursor: pointer;
   font-size: 1.5rem;
   background: none;
   border: none;
   color: #333;
-  margin: 10px 20px;       /* Some spacing */
-  align-self: flex-start;  /* Ensure it's at top-left in mobile layout */
-}
-
-/* MEDIA QUERY for mobile screens */
-@media (max-width: 768px) {
-  /* Stack layout vertically */
-  .page-container {
-    flex-direction: column;
-    gap: 0; /* Remove horizontal gap */
-  }
-
-  /* Hide the sidebar by default on mobile */
-  .sidebar {
-    position: fixed;          /* Allows it to slide out from the left */
-    top: 0;
-    left: -240px;             /* Hide it off-screen to the left */
-    width: 220px;
-    height: 100%;
-    background-color: #f9f9f9;
-    border-right: 1px solid #ddd;
-    transition: left 0.3s ease; 
-    z-index: 999;             /* On top of other elements */
-  }
-
-  /* When the sidebar is "open", shift it into view */
-  .sidebar.open {
-    left: 0;
-  }
-
-  /* Display the hamburger button on mobile */
-  .hamburger {
-    display: block;
-  }
-
-  /* Adjust main content to prevent overlap with fixed sidebar */
-  .content {
-    margin-top: 60px; /* Adjust as needed */
-  }
-
-  /* Make the bio-photo section full-width on mobile */
-  .bio-photo {
-    flex: 0 0 100%;       /* Allow photo section to be full-width on mobile */
-    max-width: 100%;      /* Prevent overflow */
-    margin-top: 0;        /* Reduce gap */
-  }
-
-  .bio-photo img {
-    width: 100%;          /* Ensure image scales down */
-    height: auto;         /* Preserve aspect ratio */
-  }
-
-  /* Reduce top margin of bio-section */
-  .bio-section {
-    margin-top: 10px; /* Reduced from 1px */
-  }
-
-  /* Reduce base font size on mobile for better readability */
-  body {
-    font-size: 16px; /* Adjust as desired */
-  }
-
-  /* Adjust heading sizes on mobile */
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
+  margin: 10px 20px; /* Some spacing */
+  align-self: flex-start; /* Ensure it's at top-left in mobile layout */
 }
 
 /* CV Button Styling */
@@ -227,5 +199,72 @@ footer {
   .cv-button {
     width: 100%; /* Make the button full-width on mobile */
     text-align: center;
+  }
+}
+
+/* MEDIA QUERY for mobile screens */
+@media (max-width: 768px) {
+  /* Stack layout vertically */
+  .page-container {
+    flex-direction: column;
+    gap: 0; /* Remove horizontal gap */
+  }
+
+  /* Hide the sidebar by default on mobile */
+  .sidebar {
+    position: fixed; /* Allows it to slide out from the left */
+    top: 0;
+    left: -240px; /* Hide it off-screen to the left */
+    width: 220px;
+    height: 100%;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    transition: left 0.3s ease;
+    z-index: 999; /* On top of other elements */
+  }
+
+  /* When the sidebar is "open", shift it into view */
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Display the hamburger button on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  /* Adjust main content to prevent overlap with fixed sidebar */
+  .content {
+    margin-top: 60px; /* Adjust as needed */
+  }
+
+  /* Make the bio-photo section full-width on mobile */
+  .bio-photo {
+    flex: 0 0 100%; /* Allow photo section to be full-width on mobile */
+    max-width: 100%; /* Prevent overflow */
+    margin-top: 0; /* Reduce gap */
+  }
+
+  .bio-photo img {
+    width: 100%; /* Ensure image scales down */
+    height: auto; /* Preserve aspect ratio */
+  }
+
+  /* Reduce top margin of bio-section */
+  .bio-section {
+    margin-top: 10px; /* Reduced from 1px */
+  }
+
+  /* Reduce base font size on mobile for better readability */
+  body {
+    font-size: 16px; /* Adjust as desired */
+  }
+
+  /* Adjust heading sizes on mobile */
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
   }
 }
