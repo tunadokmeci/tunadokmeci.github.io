@@ -1,92 +1,33 @@
+<main class="content">
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tuna Dökmeci - Academic Profile</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-
-  <!-- (Optional) Header -->
-  <!-- Header -->
-  <header>
-    <a href="index.html" class="header-link">
-      <h1>Tuna Dökmeci</h1>
-    </a>
-  </header>
-
-
-   <div class="page-container">
-     <!-- HAMBURGER MENU BUTTON (hidden on desktop, visible on mobile) -->
-  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
-
-    <!-- (Optional) Left Sidebar -->
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- MAIN CONTENT AREA -->
-    <main class="content">
-
-      <!-- Two-column section: Photo on the left, text on the right -->
-      <section class="bio-section">
-        <div class="bio-photo">
-          <!-- Replace 'photo.jpg' with your actual image file name -->
-          <img src="photo.jpg" alt="Tuna Dökmeci" />
-        </div>
-        <div class="bio-text">
-          <h2>Welcome!</h2>
-          <p>
-            I am a PhD candidate in Economics at the European University Institute (EUI). My supervisors are   <a href="https://sites.google.com/site/coopereconomics/" target="_blank" rel="noopener noreferrer">Russell Cooper</a> 
+  <!-- Two-column section: Photo on the left, text on the right -->
+  <section class="bio-section">
+    <div class="bio-photo">
+      <!-- Replace 'photo.jpg' with your actual image file name -->
+      <img src="photo.jpg" alt="Tuna Dökmeci" />
+    </div>
+    <div class="bio-text">
+      <h2>Welcome!</h2>
+      
+      <p>
+        I am a PhD candidate in Economics at the European University Institute (EUI). My supervisors are 
+        <a href="https://sites.google.com/site/coopereconomics/" target="_blank" rel="noopener noreferrer">Russell Cooper</a> 
         and 
         <a href="https://sites.google.com/view/giacomo-calzolari" target="_blank" rel="noopener noreferrer">Giacomo Calzolari</a>. 
-  </p>
-                 <p>
-  My research agenda encompasses two primary areas:
-  <strong>1) The interaction between firm competition and labour markets </strong>, which explores wage bargaining and competition, and the impact of labour market institituions on firm dynamics in imperfectly competitive markets.</em>
-  and 
-  <strong>2) Industrial policy </strong>, focusing on the effects of state aid on firm performance and worker outcomes, as well as the interplay between industrial policies, labour market frictions, and institutional frameworks. </em>
-</p>
+      </p>
+      
+      <p>
+        My research agenda encompasses two primary areas:
+        <strong>1) The Interplay Between Competition and Labour Markets</strong>, which explores wage bargaining and competition, and the impact of labour market institutions on firm dynamics in imperfectly competitive markets;
+        and 
+        <strong>2) Industrial Policy</strong>, focusing on the effects of state aid on firm performance and worker outcomes, as well as the interplay between industrial policies, labour market frictions, and institutional frameworks.
+      </p>
+      
+      <p>
+        Feel free to contact me at 
+        <a href="mailto:tuna.dokmeci@eui.eu">tuna.dokmeci@eui.eu</a>.
+      </p>
+    </div>
+  </section>
 
-          
-<p>
-  Feel free to contact me at 
-  <a href="mailto:tuna.dokmeci@eui.eu">tuna.dokmeci@eui.eu</a>.
-</p>         <p>
-   <!-- CV Download Button -->
-          <p>
-            <a href="CV_Dökmeci.pdf" target="_blank" rel="noopener" class="cv-button">
-              &#128196; CV
-            </a>
-          </p>
-        </div>
-      </section>
-
-        </div>
-      </section>
-
-    </main>
-  </div> <!-- .page-container -->
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Tuna Dökmeci</p>
-  </footer>
-</body>
-</html>
-<script>
-  function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('open');
-  }
-</script>
+</main>
