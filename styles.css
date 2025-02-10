@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Della Respira';
+  src: url('fonts/DellaRespira-Regular.woff2') format('woff2'),
+       url('fonts/DellaRespira-Regular.woff') format('woff');
+}
+
 body {
   font-family: 'Della Respira ';
   font-size: 18px;
