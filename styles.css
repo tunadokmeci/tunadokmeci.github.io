@@ -9,7 +9,7 @@ body {
   font-family: 'Garamond', serif;
   font-size: 20px; /* Base font size for desktop */
   color: #333333;
-  background-color: #ffffff;;
+  background-color: #ffffff;
 }
 
 /* Header styling */
@@ -23,7 +23,7 @@ header {
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 20px; /* Increased spacing below h1 */
-  color: #ffffff; /* Set font color to white */
+  color: #ffffff;
 }
 
 header p {
@@ -33,17 +33,15 @@ header p {
 
 /* Header Link Styling */
 .header-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Use the same color as the header text */
-  cursor: pointer; /* Keep it clickable */
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .header-link:hover {
-  text-decoration: none; /* Prevent underline on hover */
-  color: inherit; /* Prevent color change on hover */
+  text-decoration: none;
+  color: inherit;
 }
-
-
 
 /* Page Container */
 .page-container {
@@ -135,7 +133,7 @@ header p {
 }
 
 .bio-photo {
-  flex: 0 0 300px; /* Fixed width on desktop */
+  flex: 0 0 400px; /* Fixed width on desktop */
   text-align: center;
 }
 
@@ -151,18 +149,18 @@ header p {
 }
 
 .bio-text h2 {
-  margin-bottom: 20px; /* Increased spacing below h2 */
+  margin-bottom: 20px;
   font-size: 1.5rem;
   color: #444;
 }
 
 /* Increase line-height for paragraphs and list items */
 p, li {
-  line-height: 1.8; /* Adjust as desired */
+  line-height: 1.8;
 }
 
 .content section {
-  margin-bottom: 2em; /* Space between sections */
+  margin-bottom: 2em;
 }
 
 /* Footer */
@@ -180,8 +178,8 @@ footer {
   background: none;
   border: none;
   color: #333;
-  margin: 10px 20px; /* Some spacing */
-  align-self: flex-start; /* Ensure it's at top-left in mobile layout */
+  margin: 10px 20px;
+  align-self: flex-start;
 }
 
 /* CV Button Styling */
@@ -193,11 +191,11 @@ footer {
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  margin-top: 10px; /* Space above the button */
+  margin-top: 10px;
 }
 
 .cv-button i {
-  margin-right: 8px; /* Space between icon and text */
+  margin-right: 8px;
 }
 
 .cv-button:hover {
@@ -205,37 +203,50 @@ footer {
 }
 
 .cv-button:focus {
-  outline: 2px solid #555555; /* Visible focus outline for accessibility */
+  outline: 2px solid #555555;
   outline-offset: 2px;
 }
 
 /* Responsive CV Button on Mobile */
 @media (max-width: 768px) {
   .cv-button {
-    width: 100%; /* Make the button full-width on mobile */
+    width: 100%; /* Full-width button on mobile */
     text-align: center;
   }
 }
 
 /* MEDIA QUERY for mobile screens */
 @media (max-width: 768px) {
+  /* Adjust header layout: place hamburger next to header title */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px; /* Adjusted, more compact padding */
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin: 0; /* Remove extra margin */
+  }
+  
   /* Stack layout vertically */
   .page-container {
     flex-direction: column;
-    gap: 0; /* Remove horizontal gap */
+    gap: 0;
   }
 
   /* Hide the sidebar by default on mobile */
   .sidebar {
-    position: fixed; /* Allows it to slide out from the left */
+    position: fixed;
     top: 0;
-    left: -240px; /* Hide it off-screen to the left */
+    left: -240px; /* Off-screen */
     width: 220px;
     height: 100%;
     background-color: #f9f9f9;
     border-right: 1px solid #ddd;
     transition: left 0.3s ease;
-    z-index: 999; /* On top of other elements */
+    z-index: 999;
   }
 
   /* When the sidebar is "open", shift it into view */
@@ -248,37 +259,34 @@ footer {
     display: block;
   }
 
-  /* Adjust main content to prevent overlap with fixed sidebar */
+  /* Adjust main content to prevent overlap with the fixed sidebar */
   .content {
-    margin-top: 60px; /* Adjust as needed */
+    margin-top: 60px;
   }
 
   /* Make the bio-photo section full-width on mobile */
   .bio-photo {
-    flex: 0 0 100%; /* Allow photo section to be full-width on mobile */
-    max-width: 100%; /* Prevent overflow */
-    margin-top: 0; /* Reduce gap */
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 0;
   }
 
   .bio-photo img {
-    width: 100%; /* Ensure image scales down */
-    height: auto; /* Preserve aspect ratio */
+    width: 100%;
+    height: auto;
   }
 
-  /* Reduce top margin of bio-section */
+  /* Reduce top margin of bio-section to have less space above the photo */
   .bio-section {
-    margin-top: 10px; /* Reduced from 1px */
+    margin-top: 0;
   }
 
   /* Reduce base font size on mobile for better readability */
   body {
-    font-size: 16px; /* Adjust as desired */
+    font-size: 16px;
   }
 
   /* Adjust heading sizes on mobile */
-  h1 {
-    font-size: 2rem;
-  }
   h2 {
     font-size: 1.5rem;
   }
@@ -286,20 +294,20 @@ footer {
 
 /* Style for clickable links */
 ul li a {
-  color: #0077cc; /* Blue for links */
-  text-decoration: none; /* Remove underline by default */
+  color: #0077cc;
+  text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth hover effect */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 ul li a:hover {
-  color: #0055aa; /* Darker blue on hover */
-  text-decoration: underline; /* Add underline on hover */
+  color: #0055aa;
+  text-decoration: underline;
 }
 
 /* Style for non-clickable strong tags */
 ul li strong {
-  color: #333; /* Regular dark color */
+  color: #333;
   font-weight: bold;
-  text-decoration: none; /* Ensure no underline */
+  text-decoration: none;
 }
