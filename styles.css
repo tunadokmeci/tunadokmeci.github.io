@@ -40,11 +40,17 @@ header {
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  font-weight: normal; /* This makes the header text not bold */
 }
 
 header p {
   font-size: 1.2rem;
   color: #666666;
+}
+
+.header-link {
+  text-decoration: none;
+  color: inherit; /* Optional: makes the link use the same color as its parent */
 }
 
 /* Hamburger button (for mobile) */
