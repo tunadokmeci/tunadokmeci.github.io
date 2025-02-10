@@ -6,17 +6,20 @@
 }
 
 body {
-  /* Use a clean, neutral background */
+  font-family: 'Della Respira ', sans-serif;
+  font-size: 18px;
+  line-height: 1.8; 
   background-color: #ffffff;
   color: #333333;
-  font-family: 'Lato', sans-serif;  /* Clean sans-serif for body text */
-  font-size: 18px;
-  line-height: 1.6;
+}
+/* spacing between paragraphs */
+p {
+  line-height: 1.8;
 }
 
 /* Headings: elegant serif font */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;  /* Elegant serif for headings */
+  font-family: 'Della Respira', serif;  /* Elegant serif for headings */
   color: #222222;
   margin-bottom: 0.5em;
 }
@@ -25,7 +28,6 @@ h1, h2, h3, h4, h5, h6 {
 header {
   text-align: center;
   padding: 40px 20px;
-  border-bottom: 1px solid #eeeeee;
   background: none;
 }
 
