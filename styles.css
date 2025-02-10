@@ -6,56 +6,60 @@
 }
 
 body {
-  font-family: 'Garamond', serif;
-  font-size: 20px; /* Base font size for desktop */
-  color: #333333;
-  background-color: #ffffff;
+  /* Beige background and elegant font pairing */
+  background-color: #f5f0e6;
+  color: #2e4d36;
+  font-family: 'Source Sans Pro', sans-serif; /* You can change to your preferred font */
+  font-size: 20px;
+  line-height: 1.8;
 }
 
 /* Header styling */
 header {
-  text-align: center;
-  padding: 40px 0;
-  background: #701717;
-  border-bottom: 1px solid #ddd;
+  display: flex;               /* Flex layout for header items */
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  background-color: #2e4d36;     /* Dark green background */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
+  font-family: 'Playfair Display', serif;  /* Elegant serif for headings */
   font-size: 2.5rem;
-  margin-bottom: 20px; /* Increased spacing below h1 */
-  color: #ffffff;
+  color: #f5f0e6;                /* Beige text for contrast */
+  margin: 0;
 }
 
 header p {
-  font-size: 2rem;
-  color: #ddd;
+  font-size: 1.5rem;
+  color: #f5f0e6;
 }
 
-/* Header Link Styling */
-.header-link {
-  text-decoration: none;
-  color: inherit;
+/* Hamburger Button - visible on mobile */
+.hamburger {
+  display: none;
   cursor: pointer;
-}
-
-.header-link:hover {
-  text-decoration: none;
-  color: inherit;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #f5f0e6;
+  margin: 0 10px;
 }
 
 /* Page Container */
 .page-container {
   display: flex;
-  gap: 40px; /* Space between sidebar and content on desktop */
+  gap: 40px;
 }
 
-/* Sidebar on the left */
+/* Sidebar styling */
 .sidebar {
   width: 220px;
-  background-color: #ffffff;
+  background-color: #f5f0e6;
   min-height: calc(100vh - 80px);
   padding: 20px;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .sidebar ul {
@@ -68,13 +72,12 @@ header p {
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #5d0404;
+  color: #2e4d36;
 }
 
-.sidebar ul li a.active,
-.sidebar ul li a:hover {
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
   font-weight: bold;
-  color: #ddd;
 }
 
 /* Main Content */
@@ -85,18 +88,19 @@ header p {
 
 /* Section Card Styling */
 .section-card {
-  background: #ffffff;
+  background: #fff;
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .section-card h2 {
+  font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: #5d0404;
-  border-bottom: 2px solid #ddd;
+  color: #2e4d36;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
 }
 
@@ -107,33 +111,18 @@ header p {
 
 .section-card ul li {
   margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.section-card ul li strong {
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.section-card ul li span {
-  display: block;
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 5px;
 }
 
 /* Bio Section */
 .bio-section {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping on small screens */
-  gap: 20px; /* Space between columns */
-  margin-bottom: 40px;
-  margin-left: 20px;
-  margin-right: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 40px 40px;  /* Adjusted margins for a more spacious look */
 }
 
 .bio-photo {
-  flex: 0 0 300px; /* Fixed width on desktop */
+  flex: 0 0 400px;
   text-align: center;
 }
 
@@ -144,170 +133,134 @@ header p {
 }
 
 .bio-text {
-  flex: 1; /* Takes remaining space for text column */
-  line-height: 1.8; /* Increased line-height for better readability */
+  flex: 1;
 }
 
 .bio-text h2 {
+  font-family: 'Playfair Display', serif;
   margin-bottom: 20px;
   font-size: 1.5rem;
-  color: #444;
-}
-
-/* Increase line-height for paragraphs and list items */
-p, li {
-  line-height: 1.8;
-}
-
-.content section {
-  margin-bottom: 2em;
+  color: #2e4d36;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 10px 0;
-  border-top: 1px solid #ddd;
-}
-
-/* HAMBURGER BUTTON */
-.hamburger {
-  display: none; /* Hidden by default on desktop */
-  cursor: pointer;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #333;
-  margin: 10px 20px;
-  align-self: flex-start;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* CV Button Styling */
 .cv-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #333333;
-  color: #ffffff;
+  background-color: #2e4d36;
+  color: #f5f0e6;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   margin-top: 10px;
 }
 
-.cv-button i {
-  margin-right: 8px;
-}
-
 .cv-button:hover {
-  background-color: #555555;
+  background-color: #24432f;
 }
 
 .cv-button:focus {
-  outline: 2px solid #555555;
+  outline: 2px solid #24432f;
   outline-offset: 2px;
 }
 
-/* Responsive CV Button on Mobile */
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .cv-button {
-    width: 100%; /* Full-width button on mobile */
-    text-align: center;
-  }
-}
-
-/* MEDIA QUERY for mobile screens */
-@media (max-width: 768px) {
-  /* Adjust header layout: place hamburger next to header title */
+  /* Header adjustments for mobile */
   header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 10px; /* Adjusted, more compact padding */
+    padding: 20px 10px;
   }
   
   header h1 {
     font-size: 2rem;
-    margin: 0; /* Remove extra margin */
+    margin: 0;
   }
   
-  /* Stack layout vertically */
+  .hamburger {
+    display: block;
+  }
+  
+  /* Stack layout for the page container */
   .page-container {
     flex-direction: column;
     gap: 0;
   }
 
-  /* Hide the sidebar by default on mobile */
+  /* Sidebar hidden by default */
   .sidebar {
     position: fixed;
     top: 0;
-    left: -240px; /* Off-screen */
+    left: -240px;
     width: 220px;
     height: 100%;
-    background-color: #f9f9f9;
-    border-right: 1px solid #ddd;
+    background-color: #f5f0e6;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease;
     z-index: 999;
   }
-
-  /* When the sidebar is "open", shift it into view */
+  
   .sidebar.open {
     left: 0;
   }
-
-  /* Display the hamburger button on mobile */
-  .hamburger {
-    display: block;
-  }
-
-  /* Adjust main content to prevent overlap with the fixed sidebar */
+  
+  /* Adjust main content to account for the sidebar */
   .content {
     margin-top: 60px;
   }
-
-  /* Make the bio-photo section full-width on mobile */
+  
+  /* Bio-photo and bio-section adjustments for mobile */
   .bio-photo {
     flex: 0 0 100%;
     max-width: 100%;
-    margin-top: 0;
+    margin-top: 0;  /* Less space above the picture */
   }
-
+  
   .bio-photo img {
     width: 100%;
-    height: auto;
   }
-
-  /* Reduce top margin of bio-section to have less space above the photo */
+  
   .bio-section {
-    margin-top: 0;
+    margin-top: 10px; /* Fine-tune if needed */
   }
-
-  /* Reduce base font size on mobile for better readability */
+  
+  /* Responsive CV button */
+  .cv-button {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Adjust base font size on mobile */
   body {
     font-size: 16px;
   }
-
+  
   /* Adjust heading sizes on mobile */
   h2 {
     font-size: 1.5rem;
   }
 }
 
-/* Style for clickable links */
+/* Link styles */
 ul li a {
-  color: #0077cc;
+  color: #2e4d36;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 ul li a:hover {
-  color: #0055aa;
-  text-decoration: underline;
+  color: #24432f;
 }
 
-/* Style for non-clickable strong tags */
+/* Strong tag styling */
 ul li strong {
-  color: #333;
+  color: #2e4d36;
   font-weight: bold;
-  text-decoration: none;
 }
