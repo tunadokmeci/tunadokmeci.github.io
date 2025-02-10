@@ -1,57 +1,48 @@
-/* Reset and basic settings */
+ /* Reset and basics */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Della Respira';
-  src: url('fonts/DellaRespira-Regular.woff2') format('woff2'),
-       url('fonts/DellaRespira-Regular.woff') format('woff');
-}
-
 body {
-  font-family: 'Garamond';
-  font-size: 18px;
-  line-height: 1.8; 
-  background-color: #ffffff;
+  font-family: 'Garamond', serif;
+  font-size: 20px; /* Base font size for desktop */
   color: #333333;
-}
-/* spacing between paragraphs */
-p {
-  line-height: 1.8;
+  background-color: #ffffff;;
 }
 
-/* Headings: elegant serif font */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Garamond';  
-  color: #222222;
-  margin-bottom: 0.5em;
-}
-
-/* Header styling (minimal, no background color) */
+/* Header styling */
 header {
   text-align: center;
-  padding: 40px 20px;
-  background: none;
+  padding: 40px 0;
+  background: #701717;
+  border-bottom: 1px solid #ddd;
 }
 
 header h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
-  font-weight: normal; /* This makes the header text not bold */
+  margin-bottom: 20px; /* Increased spacing below h1 */
+  color: #8A9A5B; /* Set font color to white */
 }
 
 header p {
-  font-size: 1.2rem;
-  color: #666666;
+  font-size: 2rem;
+  color: #ddd;
 }
 
+/* Header Link Styling */
 .header-link {
-  text-decoration: none;
-  color: inherit; /* Optional: makes the link use the same color as its parent */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the same color as the header text */
+  cursor: pointer; /* Keep it clickable */
 }
+
+.header-link:hover {
+  text-decoration: none; /* Prevent underline on hover */
+  color: inherit; /* Prevent color change on hover */
+}
+
 
 /* Hamburger button (for mobile) */
 .hamburger {
@@ -125,13 +116,15 @@ header p {
 /* Bio Section */
 .bio-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 20px 40px 40px;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 20px; /* Space between columns */
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 40px;
 }
 
 .bio-photo {
-  flex: 0 0 400px;  /* Fixed width on desktop */
+  flex: 0 0 400px; /* Fixed width on desktop */
   text-align: center;
 }
 
@@ -139,25 +132,33 @@ header p {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
-  border: 1px solid #eeeeee;
 }
 
 .bio-text {
-  flex: 1;
+  flex: 1; /* Takes remaining space for text column */
+  line-height: 1.8; /* Increased line-height for better readability */
 }
 
 .bio-text h2 {
+  margin-bottom: 20px; /* Increased spacing below h2 */
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Increase line-height for paragraphs and list items */
+p, li {
+  line-height: 1.8; /* Adjust as desired */
+}
+
+.content section {
+  margin-bottom: 2em; /* Space between sections */
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 10px 0;
-  border-top: 1px solid #eeeeee;
-  font-size: 0.9rem;
-  color: #666666;
+  border-top: 1px solid #ddd;
 }
 
 /* CV Button Styling */
