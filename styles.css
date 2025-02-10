@@ -14,7 +14,6 @@ body {
 
 /* Header styling */
 header {
-  max-width: 700px;
   text-align: center;
   padding: 40px 0;
   background: none;
@@ -23,7 +22,7 @@ header {
 
 header h1 {
   font-size: 3rem;
-  margin-bottom: 20px; /* Increased spacing below h1 */
+  margin-bottom: 15px; /* Increased spacing below h1 */
   color: #097969; /* Set font color to green */
   font-weight: normal; /* not bold */
 }
