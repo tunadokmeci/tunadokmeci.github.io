@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Della Respira ', sans-serif;
+  font-family: 'Della Respira ';
   font-size: 18px;
   line-height: 1.8; 
   background-color: #ffffff;
@@ -19,7 +19,7 @@ p {
 
 /* Headings: elegant serif font */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Della Respira', serif;  /* Elegant serif for headings */
+  font-family: 'Della Respira';  
   color: #222222;
   margin-bottom: 0.5em;
 }
