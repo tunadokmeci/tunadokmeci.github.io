@@ -135,7 +135,7 @@ header p {
 }
 
 .bio-photo {
-  flex: 0 0 500px; /* Fixed width on desktop */
+  flex: 0 0 400px; /* Fixed width on desktop */
   text-align: center;
 }
 
