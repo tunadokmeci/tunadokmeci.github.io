@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.tunadokmeci.com/sitemap.xml
+robots.txt
