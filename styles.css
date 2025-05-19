@@ -76,6 +76,16 @@ section[id] { scroll-margin-top: 100px; }
 /* =========================================================
    Component styles
    ========================================================= */
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+   ========================================================= */
 .section-card {
   background: #fff;
   padding: 20px;
@@ -102,6 +112,8 @@ section[id] { scroll-margin-top: 100px; }
 .bio-photo { flex: 0 0 400px; text-align: center; }
 .bio-photo img { max-width: 100%; height: auto; border-radius: 4px; }
 .bio-text { flex: 1; line-height: 1.8; }
+/* Extra breathing room between bio paragraphs */
+.bio-text p { margin-bottom: 1em; }
 
 /* Global links & buttons */
 a { color: #075C51; transition: color .15s; }
