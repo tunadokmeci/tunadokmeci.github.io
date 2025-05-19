@@ -2,34 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teaching - Tuna Dökmeci</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google-fonts call can stay or be removed; not used by current CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ─── Header with top navigation bar ──────────────────── -->
   <header>
-    <a href="index.html" class="header-link">
-      <h1>Tuna Dökmeci</h1>
-    </a>
+    <!-- Site title -->
+    <h1><a class="header-link" href="index.html">Tuna Dökmeci</a></h1>
+
+    <!-- Desktop nav + mobile hamburger -->
+    <nav>
+      <ul class="top-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html" class="active">Teaching</a></li>
+      </ul>
+      <!-- Hamburger shows only <768 px -->
+      <button class="hamburger" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
+    </nav>
   </header>
 
-  <div class="page-container">
-    <!-- HAMBURGER MENU BUTTON (hidden on desktop, visible on mobile) -->
-    <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <!-- ─── Mobile drawer sidebar (hidden on desktop) ───────── -->
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html" class="active">Teaching</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-    <!-- Left Sidebar -->
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="teaching.html" class="active">Teaching</a></li>
-        </ul>
-      </nav>
-    </aside>
+  <!-- ─── Page wrapper ────────────────────────────────────── -->
+  <div class="page-container">
 
     <!-- MAIN CONTENT AREA -->
     <main class="content">
@@ -37,26 +49,24 @@
       <!-- Teaching Section -->
       <div class="section-card">
         <h2>Teaching</h2>
-   <span>         
-   At EUI, I have been teaching assistant and tutor for several classes: 
-      </span> 
+
+        <span>
+          At EUI, I have been teaching assistant and tutor for several classes:
+        </span>
+
         <ul>
           <li>
-            <strong> TA for Graduate Microeconomics II (Game Theory)</strong>, Fall 2021/22 <br />
-            <span>
-              I wrote lecture notes to accompany David K. Levine's lectures. You can download them 
-              <a href="LectureNotes_GT.pdf" target="_blank" rel="noopener">here</a>.
-            </span>
+            <strong>TA for Graduate Microeconomics II (Game Theory)</strong>, Fall 2021/22<br />
+            I wrote lecture notes to accompany David K. Levine’s lectures.
+            You can download them
+            <a href="LectureNotes_GT.pdf" target="_blank" rel="noopener">here</a>.
           </li>
           <li>
-            <strong> TA Graduate Macroeconomics III (Search and Match)</strong>, Spring 2023 <br />
-            <span>
-            </span>
+            <strong>TA Graduate Macroeconomics III (Search and Match)</strong>, Spring 2023
           </li>
-           <li>
-            <strong> MRes Program Mentor and Tutor in Micro- and Macroeconomics </strong>, Academic Year 2022/23 <br />
-            <span>
-            </span>
+          <li>
+            <strong>MRes Program Mentor and Tutor in Micro- and Macroeconomics</strong>,
+            Academic Year 2022/23
           </li>
         </ul>
       </div>
@@ -64,14 +74,14 @@
     </main>
   </div> <!-- .page-container -->
 
-  <!-- FOOTER -->
+  <!-- ─── Footer ──────────────────────────────────────────── -->
   <footer>
     <p>&copy; 2025 Tuna Dökmeci.</p>
   </footer>
 
   <!-- Sidebar Toggle Script -->
   <script>
-    function toggleSidebar() {
+    function toggleSidebar () {
       const sidebar = document.querySelector('.sidebar');
       sidebar.classList.toggle('open');
     }
