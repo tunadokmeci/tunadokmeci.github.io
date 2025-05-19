@@ -2,108 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Research - Tuna Dökmeci</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research – Tuna Dökmeci</title>
   <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ── Header (top-nav) ─────────────────────────────────── -->
   <header>
-    <a href="index.html" class="header-link">
-      <h1>Tuna Dökmeci</h1>
-    </a>
+    <h1><a class="header-link" href="index.html">Tuna Dökmeci</a></h1>
+    <nav>
+      <ul class="top-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
+    </nav>
   </header>
 
-
-  <!-- HAMBURGER MENU BUTTON -->
-  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+  <!-- Mobile drawer sidebar -->
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+      </ul>
+    </nav>
+  </aside>
 
   <div class="page-container">
-
-    <!-- Left Sidebar -->
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="research.html" class="active">Research</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- MAIN CONTENT AREA -->
     <main class="content">
-      <!-- Work in Progress -->
-      <div class="section-card">
-        <h2>Work in Progress</h2>
-        <ul>
-          <li>
-           <strong>Effects of State Aid on Firm Performance: Evidence from 22 EU Countries</strong></a><br/>
-            <span>with Andrea Brasili, Annamaria Tueske, and Jochen Schanz</span>
-          </li>
-          <li>
-           <strong>The Ripple Effect: Children's Job Insecurity and Parents' Labour and Consumption</strong></a><br/>
-            <span>with Elena Lazzaro</span>
-          </li>
-          <li>
-            <strong>Labour Demand and Firing Costs under Imperfect Competition: A Non-Monotonic Relationship</strong></a>
-          </li>
-           <li>
-           <strong>Endogenous Bargaining in Search and Match Models</strong></a><br/>
-      </li>
 
-    
-          <li>
-            <strong>Sectoral Policies in the EU</strong></a><br/>
-            <span>with Guido Bongioanni</span>
-          </li>
-          
-        </ul>
-      </div>
-      
-
-      <!-- Pre-PhD Work -->
-      <div class="section-card">
-        <h2>Pre-PhD Work</h2>
-        <ul>
-          <li>
-            <a href="https://muse.jhu.edu/pub/50/article/908207" target="_blank" rel="noopener"><strong>The Effect of Basic Income Grants on Fertility</strong></a><br/>
-            <span>with Carla Rainer and Alyssa Schneebaum. 
-            <em>Canadian Public Policy / Analyse de Politiques</em>, 2023</span>
-          </li>
-        </ul>
+      <!-- ── Filter bar ───────────────────────────────────── -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="working">Working Papers</button>
+        <button class="filter-btn" data-cat="prephd">Pre-PhD</button>
+        <button class="filter-btn" data-cat="policy">Policy</button>
       </div>
 
-      <!-- Policy Work -->
-      <div class="section-card">
-        <h2>Policy Work</h2>
-        <ul>
-          <li>
-            <a href="https://www.openbookpublishers.com/books/10.11647/obp.0434/chapters/10.11647/obp.0434.02" target="_blank" rel="noopener"><strong>Public Investment and Industrial Policy: A Case for More European Union Coordination</strong></a><br/>
-            <span>with Andrea Brasili, Atanas Kolev, Debora Revoltella, Jochen Schanz, Annamaria Tueske, and Wouter Van Der Wiele.<br/>
-            Chapter in <em>Investing in the Structural Transformation: 2024 European Public Investment Outlook</em> (pp. 13–30).</span>
-          </li>
-        </ul>
-      </div>
+      <!-- ── Paper grid ───────────────────────────────────── -->
+      <div class="paper-grid">
 
-    </main>
-  </div> <!-- .page-container -->
+        <!-- Endogenous Bargaining (first) -->
+        <div class="paper-card working">
+          <h3 class="paper-title">Endogenous Bargaining in Search and Match Models</h3>
+          <p class="paper-authors">&nbsp;</p>
+          <div class="paper-meta"><span class="paper-year">Working paper</span></div>
+        </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Tuna Dökmeci.</p>
-  </footer>
+        <!-- Effects of State Aid -->
+        <div class="paper-card working">
+          <h3 class="paper-title">Effects of State Aid on Firm Performance: Evidence from 22 EU Countries</h3>
+          <p class="paper-authors">with Andrea Brasili, Annamaria Tueske, Jochen Schanz</p>
+          <div class="paper-meta"><span class="paper-year">Working paper</span></div>
+        </div>
 
-  <!-- Sidebar Toggle Script -->
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      sidebar.classList.toggle('open');
-    }
-  </script>
+        <!-- Ripple Effect -->
+        <div class="paper-card working">
+          <h3 class="paper-title">The Ripple Effect: Children's Job Insecurity and Parents' Labour and Consumption</h3>
+          <p class="paper-authors">with Elena Lazzaro</p>
+          <div class="paper-meta"><span class="paper-year">Working paper</span></div>
+        </div>
 
-</body>
-</html>
+        <!-- Labour Demand & Firing Costs -->
+        <div class="paper-card working">
+          <h3 class="paper-title">Labour Demand and Firing Costs under Imperfect Competition: A Non-Monotonic Relationship</h3>
+          <p class="paper-authors">&nbsp;</p>
+          <div class="paper-meta"><span class="paper-year">Working paper</span></div>
+        </div>
+
+        <!-- Sectoral Policies -->
+        <div class="paper-card working">
+          <h3 class="paper-title">Sectoral Policies in the EU</h3>
+          <p class="paper-authors">with Guido Bongioanni</p>
+          <div class="paper-meta"><span class="paper-year">Working paper</span></div>
+        </div>
+
+        <!-- Pre-PhD publication -->
+        <div class="paper-card prephd">
+          <h3 class="paper-title">
+            <a class="paper-link" href="https://muse.jhu.edu/pub/50/article/908207" target="_blank" rel="noopener">
+              The Effect of Basic Income Grants on Fertility
+            </a>
+          </h3>
+          <p class="paper-authors">with Carla Rainer, Alyssa Schneebaum</p>
+          <div class="paper-meta"><span class="paper-year">2023</span></div>
+        </div>
+
+        <!-- Policy chapter -->
+        <div class="paper-card policy">
+          <h3 class="paper-title">
+            <a class="paper-link" href="https://www.openbookpublishers.com/books/10.11647/obp.0434/chapters/10.11647/obp.0434.02" target="_blank" rel="noopener">
+              Public Investment and Industrial Policy: A Case for More EU Coordination
+            </a>
+          </h3>
+          <p class="paper-authors">
+            with Andrea Brasili, Atanas Kolev, Debora Revoltella, Jochen Schanz,
+            Annamaria Tueske, Wouter Van Der Wiele
+          </p>
+          <div class="paper-meta"><span class="paper-year">2024 book chapter</span></div
