@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- ── Header ──────────────────────────────────────────── -->
+  <!-- Header ------------------------------------------------>
   <header>
     <h1><a class="header-link" href="index.html">Tuna Dökmeci</a></h1>
     <nav>
@@ -21,7 +20,7 @@
     </nav>
   </header>
 
-  <!-- Mobile drawer sidebar -->
+  <!-- Mobile drawer sidebar -------------------------------->
   <aside class="sidebar">
     <nav>
       <ul>
@@ -35,7 +34,7 @@
   <div class="page-container">
     <main class="content">
 
-      <!-- Filter bar (visible desktop & mobile) -->
+      <!-- Filter pills ------------------------------------->
       <div class="filter-bar">
         <button class="filter-btn active" data-cat="all">All</button>
         <button class="filter-btn" data-cat="working">Work in Progress</button>
@@ -43,52 +42,98 @@
         <button class="filter-btn" data-cat="policy">Policy</button>
       </div>
 
-      <!-- === paper-area wrapper ADDED === -->
+      <!-- paper-area wrapper (needed for hiding headings) --->
       <div class="paper-area">
 
-        <!-- Work in Progress -->
+        <!-- Work in Progress -------------------------------->
         <section id="working">
           <h2>Work in Progress</h2>
           <div class="paper-grid">
-            <!-- cards … -->
+
             <!-- Endogenous Bargaining -->
             <div class="paper-card working">
-              <h3 class="paper-title">Endogenous Bargaining in Search and Match Models</h3>
-              <div class="paper-meta"><span class="paper-status">Work in progress (draft coming soon)</span></div>
+              <h3 class="paper-title">Endogenous Bargaining Weights in Search and Match Labour Markets</h3>
+
+              <span class="abstract-toggle"><span class="triangle">▸</span>Abstract</span>
+              <p class="abstract-text">
+                In frictional labour markets wages are determined through a bargaining process in which firms and
+                workers share the surplus they jointly generate. A crucial element in this process is the bargaining
+                weight, usually treated as exogenous. I develop an alternating-moves bargaining model where firms and
+                workers continuously meet new potential partners during negotiations; outside options evolve in real
+                time, leading to endogenous breakdown probabilities. Bargaining weights become functions of market
+                tightness: as tightness rises, workers secure a larger share of the surplus.
+              </p>
+
+              <div class="paper-meta"><span class="paper-status">Work in progress&nbsp;(draft coming soon)</span></div>
             </div>
+
             <!-- State Aid -->
             <div class="paper-card working">
               <h3 class="paper-title">Effects of State Aid on Firm Performance: Evidence from 22 EU Countries</h3>
               <p class="paper-authors">with Andrea Brasili, Annamaria Tueske, Jochen Schanz</p>
-              <div class="paper-meta"><span class="paper-status">Work in progress (draft coming soon)</span></div>
+
+              <span class="abstract-toggle"><span class="triangle">▸</span>Abstract</span>
+              <p class="abstract-text">
+                Using large-award data merged with firm-level accounts (ORBIS), we estimate a staggered
+                difference-in-differences design. State aid boosts investment—especially under regional-development
+                programmes—but does <em>not</em> raise employment and initially lowers productivity. Heterogeneity
+                matters: firms in Central and Eastern Europe, and those in sectoral schemes, show more favourable
+                productivity responses.
+              </p>
+
+              <div class="paper-meta"><span class="paper-status">Work in progress&nbsp;(draft coming soon)</span></div>
             </div>
+
             <!-- Ripple Effect -->
             <div class="paper-card working">
-              <h3 class="paper-title">The Ripple Effect: Children’s Job Insecurity and Parents’ Labour and Consumption</h3>
+              <h3 class="paper-title">The Ripple Effect: Children's Job Insecurity and Parents' Labour and Consumption Choices</h3>
               <p class="paper-authors">with Elena Lazzaro</p>
+
+              <span class="abstract-toggle"><span class="triangle">▸</span>Abstract</span>
+              <p class="abstract-text">
+                Exploiting Italy’s 2012 “Fornero” reform—which cut firing costs only for firms &gt; 15 employees—we show
+                that parents of treated young adults reduced consumption by €2,453 per year, driven entirely by durables.
+                Labour supply does not adjust, but the consumption drop is sharper for already-retired parents who cannot
+                work more and hence reduce even non-durables.
+              </p>
+
               <div class="paper-meta"><span class="paper-status">Work in progress</span></div>
             </div>
+
             <!-- Labour Demand -->
             <div class="paper-card working">
               <h3 class="paper-title">Labour Demand and Firing Costs under Imperfect Competition: A Non-Monotonic Relationship</h3>
+
+              <span class="abstract-toggle"><span class="triangle">▸</span>Abstract</span>
+              <p class="abstract-text">
+                In an oligopolistic setting, firing costs can <em>raise</em> hiring because they let firms credibly
+                commit to higher output, deterring rivals. At low levels, costs hinder hiring; at high levels, they
+                enable leadership and expansion. Strategic spillovers mean firms react to competitors’ constraints, not
+                only their own—challenging the standard “firing costs = fewer jobs” view.
+              </p>
+
               <div class="paper-meta"><span class="paper-status">Work in progress</span></div>
             </div>
-            <!-- Sectoral Policies -->
+
+            <!-- Sectoral Policies (no abstract yet) -->
             <div class="paper-card working">
               <h3 class="paper-title">Sectoral Policies in the EU</h3>
               <p class="paper-authors">with Guido Bongioanni</p>
               <div class="paper-meta"><span class="paper-status">Work in progress</span></div>
             </div>
-          </div>
+
+          </div><!-- /.paper-grid -->
         </section>
 
-        <!-- Pre-PhD Work -->
+        <!-- Pre-PhD Work ------------------------------------>
         <section id="prephd">
           <h2>Pre-PhD Work</h2>
           <div class="paper-grid">
             <div class="paper-card prephd">
               <h3 class="paper-title">
-                <a class="paper-link" href="https://muse.jhu.edu/pub/50/article/908207" target="_blank" rel="noopener">The Effect of Basic Income Grants on Fertility</a>
+                <a class="paper-link" href="https://muse.jhu.edu/pub/50/article/908207" target="_blank" rel="noopener">
+                  Economic Security and Fertility: Evidence from the Mincome Experiment
+                </a>
               </h3>
               <p class="paper-authors">with Carla Rainer, Alyssa Schneebaum</p>
               <div class="paper-meta">
@@ -99,7 +144,7 @@
           </div>
         </section>
 
-        <!-- Policy Work -->
+        <!-- Policy Work ------------------------------------->
         <section id="policy">
           <h2>Policy Work</h2>
           <div class="paper-grid">
@@ -115,7 +160,7 @@
               </p>
               <div class="paper-meta">
                 <span class="paper-year">2024</span>
-                <span class="paper-outlet"><em>Investing in the Structural Transformation</em></span>
+                <span class="paper-outlet"><em>Investing in the Structural Transformation: 2024 European Public Investment Outlook</em></span>
               </div>
             </div>
           </div>
@@ -128,32 +173,36 @@
 
   <footer><p>&copy; 2025 Tuna Dökmeci.</p></footer>
 
-  <!-- ── Scripts consolidated at end ─────────────────────── -->
+  <!-- Scripts --------------------------------------------->
   <script>
     /* Drawer toggle */
-    function toggleSidebar () {
-      document.querySelector('.sidebar').classList.toggle('open');
-    }
+    function toggleSidebar () { document.querySelector('.sidebar').classList.toggle('open'); }
 
-    /* Filter-pill logic + hide empty section headings */
+    /* Pill filtering + heading hide */
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        /* activate the clicked pill */
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        /* show / hide cards */
-        const cat = btn.dataset.cat;  // working | prephd | policy | all
+        const cat = btn.dataset.cat;                             // all | working | prephd | policy
         document.querySelectorAll('.paper-card').forEach(card => {
           card.style.display = (cat === 'all' || card.classList.contains(cat)) ? '' : 'none';
         });
 
-        /* hide section heading if all its cards are hidden */
         document.querySelectorAll('.paper-area > section').forEach(sec => {
-          const anyVisible = Array.from(sec.querySelectorAll('.paper-card'))
-                                  .some(c => c.style.display !== 'none');
+          const anyVisible = [...sec.querySelectorAll('.paper-card')]
+                              .some(c => c.style.display !== 'none');
           sec.style.display = anyVisible ? '' : 'none';
         });
+      });
+    });
+
+    /* Abstract toggle */
+    document.querySelectorAll('.abstract-toggle').forEach(t => {
+      t.addEventListener('click', () => {
+        const card = t.closest('.paper-card');
+        card.classList.toggle('open');
+        t.classList.toggle('open');          // rotate triangle
       });
     });
   </script>
