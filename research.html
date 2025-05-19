@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />F
   <title>Research – Tuna Dökmeci</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -42,6 +42,30 @@
   <button class="filter-btn" data-cat="prephd">Pre-PhD</button>
   <button class="filter-btn" data-cat="policy">Policy</button>
 </div>
+<script>
+  /* Mobile drawer toggle (already there, keep it) */
+  function toggleSidebar () {
+    document.querySelector('.sidebar').classList.toggle('open');
+  }
+
+  /* Filter-pill logic */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      /* activate the clicked pill */
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      /* show/hide cards */
+      const cat = btn.dataset.cat;           // working | prephd | policy | all
+      document.querySelectorAll('.paper-card').forEach(card => {
+        card.style.display =
+          (cat === 'all' || card.classList.contains(cat)) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
 
       <!-- ── Paper grid ───────────────────────────────────── -->
   <!-- ── Work in Progress ────────────────────────────────── -->
