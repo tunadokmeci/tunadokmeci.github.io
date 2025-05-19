@@ -1,73 +1,72 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tuna Dökmeci - Academic Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuna Dökmeci – Academic Profile</title>
+
+  <!-- Google-fonts call is optional; you can remove if unused -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-
-  <!-- (Optional) Header -->
-  <!-- Header -->
+  <!-- ─── Header with top nav (desktop) + hamburger (mobile) ─── -->
   <header>
-    <a href="index.html" class="header-link">
-      <h1>Tuna Dökmeci</h1>
-    </a>
+    <h1><a class="header-link" href="index.html">Tuna Dökmeci</a></h1>
+
+    <nav>
+      <ul class="top-nav">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" onclick="toggleSidebar()">☰</button>
+    </nav>
   </header>
 
+  <!-- ─── Mobile drawer sidebar (hidden on desktop) ──────────── -->
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-   <div class="page-container">
-     <!-- HAMBURGER MENU BUTTON (hidden on desktop, visible on mobile) -->
-  <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
-
-    <!-- (Optional) Left Sidebar -->
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- MAIN CONTENT AREA -->
+  <!-- ─── Page wrapper ───────────────────────────────────────── -->
+  <div class="page-container">
     <main class="content">
 
-      <!-- Two-column section: Photo on the left, text on the right -->
+      <!-- Two-column section: photo + intro text -->
       <section class="bio-section">
         <div class="bio-photo">
-          <!-- Replace 'photo.jpg' with your actual image file name -->
           <img src="photo.jpg" alt="Tuna Dökmeci" />
         </div>
+
         <div class="bio-text">
           <h2>Welcome!</h2>
           <p>
-            I am a PhD candidate in Economics at the European University Institute (EUI). My supervisors are   <a href="https://sites.google.com/site/coopereconomics/" target="_blank" rel="noopener noreferrer">Russell Cooper</a> 
-        and 
-        <a href="https://sites.google.com/view/giacomo-calzolari" target="_blank" rel="noopener noreferrer">Giacomo Calzolari</a>. 
-  </p>
-                 <p>
-  My research agenda encompasses two primary areas:
-                   <p>
-  <strong>1) Firm competition and labour market outcomes</strong>
-   </p>
-           <p>
-  <strong>2) Industrial policy</strong>, particularly in the EU </em>
-</p>
+            I am a PhD candidate in Economics at the European University Institute (EUI).
+            My supervisors are
+            <a href="https://sites.google.com/site/coopereconomics/" target="_blank" rel="noopener noreferrer">Russell Cooper</a>
+            and
+            <a href="https://sites.google.com/view/giacomo-calzolari" target="_blank" rel="noopener noreferrer">Giacomo Calzolari</a>.
+          </p>
 
-          
-<p>
-  If you would like to chat, feel free to get in touch with me at 
-  <a href="mailto:tuna.dokmeci@eui.eu">tuna.dokmeci@eui.eu</a>.
-</p>         <p>
-   <!-- CV Download Button -->
+          <p>My research agenda encompasses two primary areas:</p>
+          <p><strong>1)</strong> Firm competition and labour-market outcomes</p>
+          <p><strong>2)</strong> Industrial policy, particularly in the EU</p>
+
+          <p>
+            Feel free to contact me at
+            <a href="mailto:tuna.dokmeci@eui.eu">tuna.dokmeci@eui.eu</a>.
+          </p>
+
+          <!-- CV button -->
           <p>
             <a href="CV_Dökmeci.pdf" target="_blank" rel="noopener" class="cv-button">
               &#128196; CV
@@ -76,21 +75,20 @@
         </div>
       </section>
 
-        </div>
-      </section>
-
     </main>
-  </div> <!-- .page-container -->
+  </div><!-- /.page-container -->
 
-  <!-- FOOTER -->
+  <!-- ─── Footer ─────────────────────────────────────────────── -->
   <footer>
     <p>&copy; 2025 Tuna Dökmeci</p>
   </footer>
+
+  <!-- Sidebar toggle script -->
+  <script>
+    function toggleSidebar () {
+      document.querySelector('.sidebar').classList.toggle('open');
+    }
+  </script>
+
 </body>
 </html>
-<script>
-  function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('open');
-  }
-</script>
