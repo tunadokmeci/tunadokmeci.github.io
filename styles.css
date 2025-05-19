@@ -89,7 +89,7 @@ footer {
 .section-card {
   background: #fff;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 32px;  /* increased spacing below intro card */
   border: 1px solid #eee;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
@@ -100,6 +100,8 @@ footer {
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
 }
+/* Add breathing room below any paragraph inside a card */
+.section-card p { margin-bottom: 1em; }
 
 /* Additional heading size tweak for research group titles */
 .paper-area > section > h2 {
