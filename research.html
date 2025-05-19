@@ -159,3 +159,34 @@
     </div>
   </div>
 </section>
+
+      <script>
+  /* Mobile drawer toggle */
+  function toggleSidebar () {
+    document.querySelector('.sidebar').classList.toggle('open');
+  }
+
+  /* Filter-pill logic + hide empty sections */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      /* 1. activate the clicked pill */
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      /* 2. show/hide cards */
+      const cat = btn.dataset.cat;                 // working | prephd | policy | all
+      document.querySelectorAll('.paper-card').forEach(card => {
+        card.style.display =
+          (cat === 'all' || card.classList.contains(cat)) ? '' : 'none';
+      });
+
+      /* 3. hide section heading if **all** its cards are hidden */
+      document.querySelectorAll('.paper-area > section').forEach(sec => {
+        const anyVisible = Array.from(sec.querySelectorAll('.paper-card'))
+                                .some(c => c.style.display !== 'none');
+        sec.style.display = anyVisible ? '' : 'none';
+      });
+    });
+  });
+</script>
+
