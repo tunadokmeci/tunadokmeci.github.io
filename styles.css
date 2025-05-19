@@ -20,7 +20,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 0;
+  padding: 40px 0;              /* generous desktop spacing */
   max-width: 1100px;
   margin: 0 auto;
   border-bottom: 1px solid #ddd;
@@ -64,12 +64,8 @@ header h1 {
   padding: 0 20px;
 }
 
-/* Sidebar is mobile‑only now */
+/* Sidebar hidden on desktop ------------------------------ */
 .sidebar { display: none; }
-  /* center nav items vertically & remove bullets */
-  .sidebar nav { height: 100%; display: flex; flex-direction: column; justify-content: center; }
-  .sidebar ul { list-style: none; margin: 0; padding: 0; }
-  .sidebar li + li { margin-top: 16px; }
 
 .content { flex: 1; padding: 20px 0; }
 .content section { margin-bottom: 3em; }
@@ -89,39 +85,35 @@ footer {
   color: #555;
 }
 
-   ========================================================= */
+/* Section cards */
 .section-card {
   background: #fff;
   padding: 20px;
-  margin-bottom: 32px;  /* increased spacing below intro card */
+  margin-bottom: 32px;
   border: 1px solid #eee;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
 }
 .section-card h2 {
-  font-size: 1.5rem;           /* smaller section heading */
+  font-size: 1.5rem;
   margin-bottom: 15px;
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
 }
-/* Add breathing room below any paragraph inside a card */
+/* Extra breathing room inside cards */
 .section-card p { margin-bottom: 1em; }
 
-/* Additional heading size tweak for research group titles */
-.paper-area > section > h2 {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-}
+/* Additional heading size for research section titles */
+.paper-area > section > h2 { font-size: 1.5rem; margin-bottom: 16px; }
 
-/* Biography split */
+/* Biography area ----------------------------------------- */
 .bio-section { display: flex; flex-wrap: wrap; gap: 20px; margin: 0 40px 40px 20px; }
 .bio-photo { flex: 0 0 400px; max-width: 100%; text-align: center; }
 .bio-photo img { max-width: 100%; height: auto; border-radius: 4px; }
 .bio-text { flex: 1; line-height: 1.8; }
-/* Extra breathing room between bio paragraphs */
 .bio-text p { margin-bottom: 1em; }
 
-/* Global links & buttons */
+/* Links & buttons */
 a { color: #075C51; transition: color .15s; }
 a:hover, a:focus { color: #05463d; }
 .cv-button {
@@ -134,28 +126,17 @@ a:hover, a:focus { color: #05463d; }
    Research page layout & components
    ========================================================= */
 
-/* Left‑side category nav (desktop) */
 .research-layout { display: flex; gap: 32px; }
-.research-nav {
-  display: none;               /* hide left nav on desktop now */
-  flex: 0 0 200px;
-}
+.research-nav { flex: 0 0 200px; display: block; }
 .research-nav ul { list-style: none; padding: 0; }
 .research-nav li + li { margin-top: 8px; }
 .research-nav a { color: #075C51; text-decoration: none; }
 .research-nav a:hover, .research-nav a.active { font-weight: bold; color: #05463d; }
 
-/* Filter bar (mobile only) – hidden on desktop */
-.filter-bar {
-  display: flex;               /* visible on desktop and mobile */
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-.filter-btn { padding: 4px 12px; border: 1px solid #ccc; border-radius: 20px; background: #fff; cursor: pointer; font-size: .9rem; }
-.filter-btn.active { background: #075C51; color: #fff; border-color: #075C51; }
+/* Filter pills hidden on desktop */
+.filter-bar { display: none; }
 
-/* Paper list / grid */
+/* Grid for papers */
 .paper-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; }
 .paper-card {
   background: #fff; padding: 16px 20px; border: 1px solid #eee; border-radius: 4px;
@@ -172,42 +153,66 @@ a:hover, a:focus { color: #05463d; }
    ========================================================= */
 @media (max-width: 768px) {
 
-  /* --- compact header & top offset -------------------------------- */
-  header          { padding: 10px 10px; }
+  /* Compact header & reduced top gap */
+  header          { padding: 20px 10px; }
   .content        { margin-top: 40px; }
 
-  /* --- hamburger visible as before -------------------------------- */
+  /* Show hamburger; hide top nav */
+  .top-nav        { display: none; }
+  .hamburger      { display: block; }
+  header h1       { font-size: 2rem; }
 
-  body { font-size: 16px; }
-  header { padding: 20px 10px; }
-  .top-nav { display: none; }
-  .hamburger { display: block; }
-  header h1 { font-size: 2rem; }
-
-  /* Sidebar drawer */
-  .sidebar { display: block; position: fixed; top: 0; left: -240px; width: 220px; height: 100%; background: #fff; border-right: 1px solid #eee; transition: left .3s; z-index: 999; padding: 20px; }
-  .sidebar.open { left: 0; }
+  /* Sidebar drawer (mobile) */
+  .sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -240px;
+    width: 220px;
+    height: 100%;
+    background: #fff;
+    border-right: 1px solid #eee;
+    transition: left .3s;
+    z-index: 999;
+    padding: 20px;
+  }
+  .sidebar.open   { left: 0; }
+  /* Center nav items & remove bullets */
+  .sidebar nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* align links nearer the top */
+  padding-top: 40px;          /* leave a modest gap above */
+}
+  .sidebar ul  { list-style: none; margin: 0; padding: 0; }
+  .sidebar li + li { margin-top: 16px; }
 
   .page-container { flex-direction: column; gap: 0; }
-  .content { margin-top: 60px; }
 
-  /* Biography & cards tweaks */
-  .bio-photo { flex: 0 0 100%; max-width: 100%; }
-  .bio-section { margin-top: 10px; }
-  .cv-button { width: 100%; text-align: center; }
-  .section-card { padding: 16px; }
+  /* Biography image smaller */
+  .bio-photo img  { width: 70%; height: auto; }
+  .bio-photo      { flex: 0 0 100%; max-width: 100%; }
+  .bio-section    { margin-top: 10px; }
 
-  /* Research: nav hidden, filter visible, single‑column list */
+  /* Full‑width CV button */
+  .cv-button      { width: 100%; text-align: center; }
+
+  /* Section card padding slightly tighter */
+  .section-card   { padding: 16px; }
+
+  /* Research page: pills visible, grid single-column */
   .research-layout { flex-direction: column; }
-  .research-nav { display: none; }
-  .filter-bar { display: flex; }
-  .paper-grid { grid-template-columns: 1fr; }
+  .research-nav    { display: none; }
+  .filter-bar      { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+  .paper-grid      { grid-template-columns: 1fr; }
 }
+
 /* ---------- Abstract toggle inside paper cards ---------- */
 .abstract-toggle {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-style: italic;
-  font-size: 0.95rem;       /* slightly smaller than body text */
+  font-size: 0.95rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -215,15 +220,4 @@ a:hover, a:focus { color: #05463d; }
   user-select: none;
 }
 .abstract-toggle .triangle { transition: transform .2s ease; }
-.abstract-toggle.open .triangle { transform: rotate(90deg); }
-
-.abstract-text {
-  display: none;
-  margin-top: 8px;
-  font-style: normal;
-  font-size: 0.95rem;        /* one step smaller than main text */
-  color: #444;
-  line-height: 1.6;
-}
-.paper-card.open .abstract-text { display: block; }
-
+.abstract-toggle.open .triangle { transform: rotate(
