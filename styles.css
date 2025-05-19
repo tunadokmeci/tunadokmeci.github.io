@@ -100,11 +100,7 @@ footer {
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
 }
-/* Extra breathing room inside cards */
 .section-card p { margin-bottom: 1em; }
-
-/* Additional heading size for research section titles */
-.paper-area > section > h2 { font-size: 1.5rem; margin-bottom: 16px; }
 
 /* Biography area ----------------------------------------- */
 .bio-section { display: flex; flex-wrap: wrap; gap: 20px; margin: 0 40px 40px 20px; }
@@ -126,17 +122,11 @@ a:hover, a:focus { color: #05463d; }
    Research page layout & components
    ========================================================= */
 
-.research-layout { display: flex; gap: 32px; }
-.research-nav { flex: 0 0 200px; display: block; }
-.research-nav ul { list-style: none; padding: 0; }
-.research-nav li + li { margin-top: 8px; }
-.research-nav a { color: #075C51; text-decoration: none; }
-.research-nav a:hover, .research-nav a.active { font-weight: bold; color: #05463d; }
+/* Pills visible on desktop and mobile */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
 
-/* Filter pills hidden on desktop */
-.filter-bar { display: none; }
+.research-nav { display: none; } /* no left nav */
 
-/* Grid for papers */
 .paper-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; }
 .paper-card {
   background: #fff; padding: 16px 20px; border: 1px solid #eee; border-radius: 4px;
@@ -148,14 +138,31 @@ a:hover, a:focus { color: #05463d; }
 .paper-meta   { font-size: .85rem; display: flex; gap: 12px; align-items: center; }
 .paper-link   { color: #075C51; }
 
+/* ---------- Abstract toggle inside paper cards ---------- */
+.abstract-toggle {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  user-select: none;
+}
+.abstract-toggle .triangle { transition: transform .2s ease; }
+.abstract-toggle.open .triangle { transform: rotate(90deg); }
+
+.abstract-text { display: none; margin-top: 8px; font-style: normal; font-size: 0.95rem; color: #444; line-height: 1.6; }
+.paper-card.open .abstract-text { display: block; }
+
 /* =========================================================
    ===============  MOBILE  STYLES  =========================
    ========================================================= */
 @media (max-width: 768px) {
 
   /* Compact header & reduced top gap */
-  header          { padding: 20px 10px; }
-  .content        { margin-top: 40px; }
+  header          { padding: 15px 10px; }
+  .content        { margin-top: 20px; }
 
   /* Show hamburger; hide top nav */
   .top-nav        { display: none; }
@@ -177,14 +184,13 @@ a:hover, a:focus { color: #05463d; }
     padding: 20px;
   }
   .sidebar.open   { left: 0; }
-  /* Center nav items & remove bullets */
   .sidebar nav {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* align links nearer the top */
-  padding-top: 40px;          /* leave a modest gap above */
-}
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* align links nearer the top */
+    padding-top: 20px;          /* modest gap */
+  }
   .sidebar ul  { list-style: none; margin: 0; padding: 0; }
   .sidebar li + li { margin-top: 16px; }
 
@@ -201,23 +207,6 @@ a:hover, a:focus { color: #05463d; }
   /* Section card padding slightly tighter */
   .section-card   { padding: 16px; }
 
-  /* Research page: pills visible, grid single-column */
-  .research-layout { flex-direction: column; }
-  .research-nav    { display: none; }
-  .filter-bar      { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
-  .paper-grid      { grid-template-columns: 1fr; }
+  /* Research page: single-column grid */
+  .paper-grid     { grid-template-columns: 1fr; }
 }
-
-/* ---------- Abstract toggle inside paper cards ---------- */
-.abstract-toggle {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  user-select: none;
-}
-.abstract-toggle .triangle { transition: transform .2s ease; }
-.abstract-toggle.open .triangle { transform: rotate(
