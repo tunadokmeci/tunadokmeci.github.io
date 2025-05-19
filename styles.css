@@ -190,3 +190,24 @@ a:hover, a:focus { color: #05463d; }
   .filter-bar { display: flex; }
   .paper-grid { grid-template-columns: 1fr; }
 }
+/* ---------- Abstract toggle inside paper cards ---------- */
+.abstract-toggle {
+  font-style: italic;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  user-select: none;
+}
+.abstract-toggle .triangle { transition: transform .2s ease; }
+.abstract-toggle.open .triangle { transform: rotate(90deg); }
+
+.abstract-text {
+  display: none;
+  margin-top: 8px;
+  font-style: italic;
+  color: #444;
+  line-height: 1.6;
+}
+.paper-card.open .abstract-text { display: block; }
+
