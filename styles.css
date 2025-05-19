@@ -193,7 +193,8 @@ a:hover, a:focus { color: #05463d; }
 /* ---------- Abstract toggle inside paper cards ---------- */
 .abstract-toggle {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-style: italic;          /* keeps italic but uses sans‑serif */
+  font-style: italic;
+  font-size: 0.95rem;       /* slightly smaller than body text */
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -206,7 +207,8 @@ a:hover, a:focus { color: #05463d; }
 .abstract-text {
   display: none;
   margin-top: 8px;
-  font-style: normal;          /* body copy style */
+  font-style: normal;
+  font-size: 0.95rem;        /* one step smaller than main text */
   color: #444;
   line-height: 1.6;
 }
