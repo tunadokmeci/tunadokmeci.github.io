@@ -172,6 +172,15 @@ a:hover, a:focus { color: #05463d; }
 .abstract-text { display: none; margin-top: 8px; font-style: normal; font-size: 0.95rem; color: #444; line-height: 1.6; }
 .paper-card.open .abstract-text { display: block; }
 
+
+/* ---------- Presented ---------- */
+.paper-presented {
+font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9rem;   /* ≈15 px, a bit smaller than body text */
+  margin-top: 4px;     /* tiny gap under the abstract */
+  color: #555;         /* softer grey */
+}
+
 /* =========================================================
    ===============  MOBILE  STYLES  =========================
    ========================================================= */
