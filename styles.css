@@ -125,6 +125,23 @@ a:hover, a:focus { color: #05463d; }
 /* Pills visible on desktop and mobile */
 .filter-bar { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
 
+/* Pill buttons */
+.filter-btn {
+  padding: 4px 14px;
+  border: 1px solid #075C51;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #075C51;
+  color: #fff;
+}
+
 .research-nav { display: none; } /* no left nav */
 
 .paper-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; }
