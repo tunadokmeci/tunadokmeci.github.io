@@ -8,9 +8,10 @@
 :root {
   --ui-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
 :root {
-  --accent: #22324d;
-  --accent-hover: #1a2538;
+  --accent: #2b3a67;
+  --accent-hover: #223055;
 }
 
 .top-nav,
@@ -333,6 +334,7 @@ a:hover, a:focus { color: var(--accent-hover); }
   .sidebar a { display:block; padding: 10px 0; }
   .filter-btn { padding: 8px 14px; }
 }
+
 
 
 
