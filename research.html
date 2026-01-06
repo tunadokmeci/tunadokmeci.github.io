@@ -236,8 +236,47 @@ tightness. Under standard matching technologies, more favourable market conditio
       });
     });
   </script>
+    <aside class="sidebar" id="sidebar">
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/teaching/">Teaching</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+  <!-- JS: hamburger + overlay -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('show');
+    }
+
+    function closeSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.sidebar a').forEach(a => {
+        a.addEventListener('click', closeSidebar);
+      });
+    });
+  </script>
+
 </body>
 </html>
+
+</body>
+</html>
+
 
 
 
