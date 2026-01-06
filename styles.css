@@ -161,27 +161,39 @@ a:hover, a:focus { color: #05463d; }
 /* ---------- Abstract toggle inside paper cards ---------- */
 .abstract-toggle {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.85rem;      /* smaller */
   font-style: italic;
-  font-size: 0.95rem;
+  font-weight: 400;
+  color: #555;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   user-select: none;
 }
-.abstract-toggle .triangle { transition: transform .2s ease; }
+
+.abstract-toggle .triangle {
+  font-size: 0.85em;       /* triangle scales down too */
+  transition: transform .2s ease;
+}
+
 .abstract-toggle.open .triangle { transform: rotate(90deg); }
 
 .abstract-text { display: none; margin-top: 8px; font-style: normal; font-size: 0.95rem; color: #444; line-height: 1.6; }
 .paper-card.open .abstract-text { display: block; }
+.abstract-text {
+  font-size: 0.92rem;
+  color: #555;
+}
 
 
 /* ---------- Presented ---------- */
 .paper-presented {
-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.9rem;   /* ≈15 px, a bit smaller than body text */
-  margin-top: 4px;     /* tiny gap under the abstract */
-  color: #555;         /* softer grey */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.82rem;   /* smaller than before */
+  opacity: 0.9;
+  margin-top: 6px;
+  color: #666;
 }
 
 /* =========================================================
@@ -239,5 +251,6 @@ font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   /* Research page: single-column grid */
   .paper-grid     { grid-template-columns: 1fr; }
 }
+
 
 
