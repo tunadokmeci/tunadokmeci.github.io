@@ -79,8 +79,9 @@ header h1 {
 .content {
   flex: 1;
   padding: 20px 0;
-  max-width: 760px;
+  max-width: 840px;
 }
+
 .content section { margin-bottom: 3em; }
 
 /* Ensure anchor links are visible below fixed header */
@@ -283,6 +284,7 @@ a:hover, a:focus { color: #05463d; }
   .sidebar a { display:block; padding: 10px 0; }
   .filter-btn { padding: 8px 14px; }
 }
+
 
 
 
