@@ -136,13 +136,50 @@ footer {
 /* Links & buttons */
 a { color: #075C51; transition: color .15s; }
 a:hover, a:focus { color: #05463d; }
+
 .cv-button {
-  display: inline-block; padding: 6px 12px; background: none; border: 1px solid #075C51;
-  color: #075C51; border-radius: 4px; transition: background .3s, color .3s; margin-top: 10px;
+  display: inline-flex;          /* important */
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 12px;
+  background: none;
+  border: 1px solid #075C51;
+  color: #075C51;
+  border-radius: 4px;
+  transition: background .3s, color .3s;
+  margin-top: 10px;
 }
-.cv-button:hover, .cv-button:focus { background: #075C51; color: #fff; }
+
+.cv-button:hover,
+.cv-button:focus {
+  background: #075C51;
+  color: #fff;
+}
+
+/* spacing between buttons on desktop (optional, flex gap already handles most cases) */
 .cv-button + .cv-button {
   margin-left: 10px;
+}
+
+/* profile links wrapper */
+.profile-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-icon {
+  font-size: 0.9em;
+  line-height: 1;
+  display: inline-block;
+}
+
+/* mobile stacking */
+@media (max-width: 768px) {
+  .profile-links {
+    flex-direction: column;
+  }
 }
 
 /* =========================================================
@@ -292,6 +329,7 @@ a:hover, a:focus { color: #05463d; }
   .sidebar a { display:block; padding: 10px 0; }
   .filter-btn { padding: 8px 14px; }
 }
+
 
 
 
