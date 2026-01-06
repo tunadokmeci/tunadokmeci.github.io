@@ -213,7 +213,11 @@ a:hover, a:focus { color: var(--accent-hover); }
 
 .research-nav { display: none; } /* no left nav */
 
-.paper-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 24px; }
+.paper-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 .paper-card {
   background: #fff; padding: 16px 20px; border: 1px solid #eee; border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,.05); transition: transform .12s, box-shadow .12s;
@@ -334,6 +338,7 @@ a:hover, a:focus { color: var(--accent-hover); }
   .sidebar a { display:block; padding: 10px 0; }
   .filter-btn { padding: 8px 14px; }
 }
+
 
 
 
