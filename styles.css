@@ -230,7 +230,7 @@ a:hover, a:focus { color: #05463d; }
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* align links nearer the top */
-    padding-top: 20px;          /* modest gap */
+    padding-top: 60px;         
   }
   .sidebar ul  { list-style: none; margin: 0; padding: 0; }
   .sidebar li + li { margin-top: 16px; }
@@ -251,6 +251,7 @@ a:hover, a:focus { color: #05463d; }
   /* Research page: single-column grid */
   .paper-grid     { grid-template-columns: 1fr; }
 }
+
 
 
 
