@@ -8,6 +8,10 @@
 :root {
   --ui-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+:root {
+  --accent: #22324d;
+  --accent-hover: #1a2538;
+}
 
 .top-nav,
 .hamburger,
@@ -43,7 +47,7 @@ header {
 }
 header h1 {
   font-size: 3rem;
-  color: #075C51;
+  color: var(--accent);
   font-weight: normal;
   margin: 0;
 }
@@ -56,8 +60,8 @@ header h1 {
   list-style: none;
   font-size: 1rem;
 }
-.top-nav a { text-decoration: none; color: #075C51; transition: color .2s; }
-.top-nav a:hover, .top-nav a:focus { color: #05463d; font-weight: bold; }
+.top-nav a { text-decoration: none; color: var(--accent); transition: color .2s; }
+.top-nav a:hover, .top-nav a:focus { color: var(--accent-hover); font-weight: bold; }
 .top-nav a.active { font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
 
 /* -------- Hamburger (mobile) ---------------------------- */
@@ -134,8 +138,8 @@ footer {
 .bio-text p { margin-bottom: 1em; }
 
 /* Links & buttons */
-a { color: #075C51; transition: color .15s; }
-a:hover, a:focus { color: #05463d; }
+a { color: var(--accent); transition: color .15s; }
+a:hover, a:focus { color: var(--accent-hover); }
 
 .cv-button {
   display: inline-flex;          /* important */
@@ -144,8 +148,8 @@ a:hover, a:focus { color: #05463d; }
 
   padding: 6px 12px;
   background: none;
-  border: 1px solid #075C51;
-  color: #075C51;
+  border: 1px solid var(--accent);
+  color: var(--accent);
   border-radius: 4px;
   transition: background .3s, color .3s;
   margin-top: 10px;
@@ -153,7 +157,7 @@ a:hover, a:focus { color: #05463d; }
 
 .cv-button:hover,
 .cv-button:focus {
-  background: #075C51;
+  background: var(--accent);
   color: #fff;
 }
 
@@ -192,7 +196,7 @@ a:hover, a:focus { color: #05463d; }
 /* Pill buttons */
 .filter-btn {
   padding: 4px 14px;
-  border: 1px solid #075C51;
+  border: 1px solid var(--accent);
   border-radius: 20px;
   background: #fff;
   font-size: 0.95rem;
@@ -202,7 +206,7 @@ a:hover, a:focus { color: #05463d; }
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: #075C51;
+  background: var(--accent);
   color: #fff;
 }
 
@@ -217,7 +221,7 @@ a:hover, a:focus { color: #05463d; }
 .paper-title  { margin: 0 0 6px 0; font-size: 1.1rem; color: #222; }
 .paper-authors{ margin: 0 0 10px 0; font-size: .95rem; line-height: 1.5; color: #555; }
 .paper-meta   { font-size: .85rem; display: flex; gap: 12px; align-items: center; }
-.paper-link   { color: #075C51; }
+.paper-link   { color: var(--accent); }
 
 /* ---------- Abstract toggle inside paper cards ---------- */
 .abstract-toggle {
@@ -329,6 +333,7 @@ a:hover, a:focus { color: #05463d; }
   .sidebar a { display:block; padding: 10px 0; }
   .filter-btn { padding: 8px 14px; }
 }
+
 
 
 
