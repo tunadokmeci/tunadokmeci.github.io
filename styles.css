@@ -234,7 +234,17 @@ a:hover, a:focus { color: #05463d; }
   }
   .sidebar ul  { list-style: none; margin: 0; padding: 0; }
   .sidebar li + li { margin-top: 16px; }
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+    z-index: 998; /* sidebar is 999 */
+  }
 
+  .overlay.show {
+    display: block;
+  }
   .page-container { flex-direction: column; gap: 0; }
 
   /* Biography image smaller */
@@ -251,6 +261,7 @@ a:hover, a:focus { color: #05463d; }
   /* Research page: single-column grid */
   .paper-grid     { grid-template-columns: 1fr; }
 }
+
 
 
 
