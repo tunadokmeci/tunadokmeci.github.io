@@ -53,15 +53,51 @@
   <div class="page-container">
     <main class="content">
       <!-- Filter pills ------------------------------------->
-      <div class="filter-bar">
-        <button class="filter-btn active" data-cat="all">All</button>
-        <button class="filter-btn" data-cat="working">Work in Progress</button>
-        <button class="filter-btn" data-cat="prephd">Pre-PhD</button>
-        <button class="filter-btn" data-cat="policy">Policy</button>
-      </div>
+<div class="filter-bar">
+  <button class="filter-btn active" data-cat="all">All</button>
+  <button class="filter-btn" data-cat="workingpapers">Working Papers</button>
+  <button class="filter-btn" data-cat="working">Work in Progress</button>
+  <button class="filter-btn" data-cat="prephd">Pre-PhD</button>
+  <button class="filter-btn" data-cat="policy">Policy</button>
+</div>
+
 
       <!-- paper-area wrapper (needed for hiding headings) --->
       <div class="paper-area">
+        
+<!-- Working Papers -------------------------------->
+<section id="workingpapers">
+  <h2>Working Papers</h2>
+  <div class="paper-grid">
+
+    <!-- State Aid (moved here) -->
+    <article class="paper-card workingpapers">
+      <h3 class="paper-title">Effects of State Aid on Firm Performance: Evidence from 22 EU Countries</h3>
+      <p class="paper-authors">with Andrea Brasili, Annamaria Tueske, Jochen Schanz</p>
+
+      <button class="abstract-toggle" aria-expanded="false">
+        <span class="triangle">▸</span>Abstract
+      </button>
+
+      <div class="abstract-text">
+        <p>
+                  This paper examines the impact of state aid on firm performance across 22 EU countries. Using data on large state aid awards merged with firm-level balance sheet information from the Orbis database, we employ a generalised difference-in-differences approach with staggered adoption to identify causal effects on investment rates, employment growth, and revenue-based productivity. Our analysis reveals that state aid substantially boosts firm investment, particularly for recipients under regional development programmes. However, the increased investment does not translate into higher employment growth, and is associated with an initial decline in productivity due to rising capital without corresponding revenue gains. Notably, regional heterogeneity is observed: firms in Central and Eastern Europe exhibit more favourable productivity responses. These findings suggest that while state aid can effectively stimulate capital formation, its design should be refined to ensure that investments are productivity-enhancing and support job creation.
+
+        </p>
+      </div>
+
+      <p class="paper-presented">
+        <em>Presented at (*scheduled):</em> Research Conference on the Single Market*, EUI, Joint Research Centre TEDAM Seminar
+      </p>
+
+      <div class="paper-meta">
+        <a class="paper-link" href="State_Aid_Effects_EU.pdf" target="_blank" rel="noopener">PDF</a>
+        <span class="paper-status">Working paper</span>
+      </div>
+    </article>
+
+  </div>
+</section>
 
         <!-- Work in Progress -------------------------------->
         <section id="working">
@@ -84,23 +120,6 @@ tightness. Under standard matching technologies, more favourable market conditio
                 </p>
               </div>
 
-              <div class="paper-meta"><span class="paper-status">Draft available upon request</span></div>
-            </article>
-
-            <!-- State Aid -->
-            <article class="paper-card working">
-              <h3 class="paper-title">Effects of State Aid on Firm Performance: Evidence from 22 EU Countries</h3>
-              <p class="paper-authors">with Andrea Brasili, Annamaria Tueske, Jochen Schanz</p>
-
-              <button class="abstract-toggle" aria-expanded="false"><span class="triangle">▸</span>Abstract</button>
-              <div class="abstract-text">
-                <p>
-                  This paper examines the impact of state aid on firm performance across 22 EU countries. Using data on large state aid awards merged with firm-level balance sheet information from the Orbis database, we employ a generalised difference-in-differences approach with staggered adoption to identify causal effects on investment rates, employment growth, and revenue-based productivity. Our analysis reveals that state aid substantially boosts firm investment, particularly for recipients under regional development programmes. However, the increased investment does not translate into higher employment growth, and is associated with an initial decline in productivity due to rising capital without corresponding revenue gains. Notably, regional heterogeneity is observed: firms in Central and Eastern Europe exhibit more favourable productivity responses. These findings suggest that while state aid can effectively stimulate capital formation, its design should be refined to ensure that investments are productivity-enhancing and support job creation.
-                </p>
-              </div>
-              <p class="paper-presented">
-                <em>Presented at (*scheduled):</em> Research Conference on the Single Market*, EUI, Joint Research Centre TEDAM Seminar
-              </p>
               <div class="paper-meta"><span class="paper-status">Draft available upon request</span></div>
             </article>
 
@@ -199,80 +218,61 @@ tightness. Under standard matching technologies, more favourable market conditio
   <footer>
     <p>&copy; 2025 Tuna Dökmeci. PhD Candidate in Economics at European University Institute.</p>
   </footer>
+<script>
+  // Sidebar open/close (hamburger + overlay)
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('overlay');
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('show');
+  }
 
-  <!-- Scripts --------------------------------------------->
-  <script>
-    /* Drawer toggle */
-    function toggleSidebar () { document.querySelector('.sidebar').classList.toggle('open'); }
+  function closeSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('overlay');
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+  }
 
-    /* Pill filtering + heading hide */
+  document.addEventListener('DOMContentLoaded', () => {
+    // close menu when clicking a sidebar link
+    document.querySelectorAll('.sidebar a').forEach(a => {
+      a.addEventListener('click', closeSidebar);
+    });
+
+    // Pill filtering + hide empty sections
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        const cat = btn.dataset.cat;                             // all | working | prephd | policy
+        const cat = btn.dataset.cat; // all | workingpapers | working | prephd | policy
+
         document.querySelectorAll('.paper-card').forEach(card => {
           card.style.display = (cat === 'all' || card.classList.contains(cat)) ? '' : 'none';
         });
 
         document.querySelectorAll('.paper-area > section').forEach(sec => {
           const anyVisible = [...sec.querySelectorAll('.paper-card')]
-                              .some(c => c.style.display !== 'none');
+            .some(c => c.style.display !== 'none');
           sec.style.display = anyVisible ? '' : 'none';
         });
       });
     });
 
-    /* Abstract toggle */
+    // Abstract toggles
     document.querySelectorAll('.abstract-toggle').forEach(t => {
       t.addEventListener('click', () => {
         const card = t.closest('.paper-card');
         const isOpen = card.classList.contains('open');
-        
+
         card.classList.toggle('open');
         t.classList.toggle('open');
-        t.setAttribute('aria-expanded', !isOpen);
+        t.setAttribute('aria-expanded', String(!isOpen));
       });
     });
-  </script>
-    <aside class="sidebar" id="sidebar">
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/research/">Research</a></li>
-        <li><a href="/teaching/">Teaching</a></li>
-      </ul>
-    </nav>
-  </aside>
-
-  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
-
-  <!-- JS: hamburger + overlay -->
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      const overlay = document.getElementById('overlay');
-      sidebar.classList.toggle('open');
-      overlay.classList.toggle('show');
-    }
-
-    function closeSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      const overlay = document.getElementById('overlay');
-      sidebar.classList.remove('open');
-      overlay.classList.remove('show');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.sidebar a').forEach(a => {
-        a.addEventListener('click', closeSidebar);
-      });
-    });
-  </script>
-
-</body>
-</html>
+  });
+</script>
 
 </body>
 </html>
