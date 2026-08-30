@@ -1,19 +1,35 @@
 /* =========================================================
-   ===============  DESKTOP (default) STYLES  ===============
+   ================= GLOBAL SETTINGS ========================
    ========================================================= */
 
-/* -------- Reset & global defaults ----------------------- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
   --ui-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
 
-:root {
   --accent: #2b3a67;
   --accent-hover: #223055;
+
+  --page-width: 1240px;
+  --left-padding: 75px;
+  --right-padding: 15px;
 }
 
+body {
+  font-family: "Garamond", serif;
+  font-size: 18px;
+  line-height: 1.7;
+
+  color: #222;
+  background: #fff;
+}
+
+
+/* UI font for navigation and metadata */
 .top-nav,
 .hamburger,
 .filter-bar,
@@ -26,343 +42,769 @@ footer {
 }
 
 
-body {
-  font-family: 'Garamond', serif;
-  font-size: 18px;
-  color: #222;
-  background: #fff;
-  line-height: 1.7;
-}
-
 /* =========================================================
-   Header: name on the left · top nav on the right
+   ====================== HEADER =============================
    ========================================================= */
+
 header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 90px;
 
-  padding: 28px 10px 28px 70px;
-  max-width: 1240px;
+  max-width: var(--page-width);
   margin: 0 auto;
+
+  padding:
+    22px
+    var(--right-padding)
+    22px
+    var(--left-padding);
 
   border-bottom: 1px solid #ddd;
 }
 
-header h1 {
-  font-size: 3rem;
-  color: var(--accent);
-  font-weight: normal;
-  margin: 0;
-}
-.header-link { text-decoration: none; color: inherit; }
 
-/* -------- Top navigation (desktop) ---------------------- */
+/* Name */
+
+header h1 {
+  margin: 0;
+
+  font-size: 2.8rem;
+  font-weight: normal;
+
+  color: var(--accent);
+
+  white-space: nowrap;
+}
+
+.header-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* Keep navigation near name */
+
+header nav {
+  margin-left: 80px;
+}
+
+
+/* Desktop navigation */
+
 .top-nav {
   display: flex;
+  align-items: center;
+
   gap: 32px;
+
   list-style: none;
+
   font-size: 1rem;
 }
-.top-nav a { text-decoration: none; color: var(--accent); transition: color .2s; }
-.top-nav a:hover, .top-nav a:focus { color: var(--accent-hover); font-weight: bold; }
-.top-nav a.active { font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
 
-/* -------- Hamburger (mobile) ---------------------------- */
+.top-nav a {
+  color: var(--accent);
+  text-decoration: none;
+
+  transition: color 0.2s;
+}
+
+.top-nav a:hover,
+.top-nav a:focus {
+  color: var(--accent-hover);
+}
+
+.top-nav a.active {
+  font-weight: 700;
+
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+
+/* Hamburger hidden on desktop */
+
 .hamburger {
   display: none;
+
   background: none;
   border: none;
+
   font-size: 1.5rem;
   color: #222;
+
   cursor: pointer;
 }
 
+
 /* =========================================================
-   Layout shell
+   ===================== PAGE LAYOUT =========================
    ========================================================= */
+
 .page-container {
   display: flex;
-  gap: 40px;
-  max-width: 1240px;
+
+  width: 100%;
+  max-width: var(--page-width);
+
   margin: 0 auto;
-  padding-left: 70px;
-  padding-right: 10px;
+
+  padding-left: var(--left-padding);
+  padding-right: var(--right-padding);
 }
 
-/* Sidebar hidden on desktop ------------------------------ */
-.sidebar { display: none; }
+
+/* Main content */
 
 .content {
   flex: 1;
-  padding: 20px 0;
-  max-width: 980px;
-}
-.content section { margin-bottom: 2.2em; }
 
-/* Ensure anchor links are visible below fixed header */
-section[id] { scroll-margin-top: 100px; }
+  width: 100%;
+  max-width: 1120px;
+
+  padding: 20px 0;
+}
+
+
+/* Space between sections */
+
+.content section {
+  margin-bottom: 2.2em;
+}
+
+
+/* Anchor links should not land under header */
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+
+/* Desktop sidebar hidden */
+
+.sidebar {
+  display: none;
+}
+
+
+/* Overlay hidden on desktop */
+
+.overlay {
+  display: none;
+}
+
 
 /* =========================================================
-   Component styles
+   ====================== HOMEPAGE ===========================
    ========================================================= */
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* Section cards */
-.section-card {
-  background: #fff;
-  padding: 20px;
-  margin-bottom: 32px;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.05);
-}
-.section-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
-}
-.section-card p { margin-bottom: 1em; }
-.section-card, .paper-card { box-shadow: 0 1px 2px rgba(0,0,0,.04); }
-
-
-/* Biography area ----------------------------------------- */
 .bio-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: 36px;              /* more breathing room between photo & text */
-  margin: 0 0 36px 0;     /* clean, symmetric margins */
+  flex-wrap: nowrap;
+
   align-items: flex-start;
+
+  gap: 38px;
+
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
-.bio-photo { flex: 0 0 400px; max-width: 100%; text-align: center; }
-.bio-photo img { max-width: 100%; height: auto; border-radius: 4px; }
-.bio-text { flex: 1; line-height: 1.8; }
-.bio-text p { margin-bottom: 1em; }
 
-/* Links & buttons */
-a { color: var(--accent); transition: color .15s; }
-a:hover, a:focus { color: var(--accent-hover); }
+/* Photo */
+
+.bio-photo {
+  flex: 0 0 340px;
+
+  max-width: 340px;
+
+  text-align: center;
+}
+
+.bio-photo img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: 4px;
+}
+
+
+/* Biography text */
+
+.bio-text {
+  flex: 1;
+  min-width: 0;
+
+  line-height: 1.75;
+}
+
+.bio-text h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  font-size: 1.55rem;
+}
+
+.bio-text p {
+  margin-bottom: 0.9em;
+}
+
+
+/* =========================================================
+   ================= LINKS & BUTTONS =========================
+   ========================================================= */
+
+a {
+  color: var(--accent);
+
+  transition: color 0.15s;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-hover);
+}
+
+
+/* Profile links */
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+/* CV button */
 
 .cv-button {
-  display: inline-flex;          /* important */
+  display: inline-flex;
   align-items: center;
+
   gap: 6px;
 
+  margin-top: 4px;
+
   padding: 6px 12px;
+
   background: none;
+
   border: 1px solid var(--accent);
-  color: var(--accent);
   border-radius: 4px;
-  transition: background .3s, color .3s;
-  margin-top: 10px;
+
+  color: var(--accent);
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
 .cv-button:hover,
 .cv-button:focus {
   background: var(--accent);
+
   color: #fff;
 }
 
-/* spacing between buttons on desktop (optional, flex gap already handles most cases) */
-.cv-button + .cv-button {
-  margin-left: 10px;
-}
-
-/* profile links wrapper */
-.profile-links {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
 .btn-icon {
+  display: inline-block;
+
   font-size: 0.9em;
   line-height: 1;
-  display: inline-block;
 }
 
-/* mobile stacking */
-@media (max-width: 768px) {
-  .profile-links {
-    flex-direction: column;
-  }
-}
 
 /* =========================================================
-   Research page layout & components
+   ===================== SECTION CARDS =======================
    ========================================================= */
 
-/* Pills visible on desktop and mobile */
-.filter-bar { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+.section-card {
+  margin-bottom: 32px;
 
-/* Pill buttons */
+  padding: 20px;
+
+  background: #fff;
+
+  border: 1px solid #eee;
+  border-radius: 4px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.section-card h2 {
+  margin-bottom: 15px;
+
+  padding-bottom: 5px;
+
+  font-size: 1.5rem;
+
+  border-bottom: 1px solid #eee;
+}
+
+.section-card p {
+  margin-bottom: 1em;
+}
+
+
+/* =========================================================
+   ===================== RESEARCH PAGE =======================
+   ========================================================= */
+
+/* Filter buttons */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  margin-bottom: 24px;
+}
+
 .filter-btn {
   padding: 4px 14px;
+
+  background: #fff;
+
   border: 1px solid var(--accent);
   border-radius: 20px;
-  background: #fff;
+
   font-size: 0.95rem;
+
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
   background: var(--accent);
+
   color: #fff;
 }
 
-.research-nav { display: none; } /* no left nav */
+
+/* Old research nav unused */
+
+.research-nav {
+  display: none;
+}
+
+
+/* Paper grid */
 
 .paper-grid {
   display: flex;
   flex-direction: column;
+
   gap: 24px;
 }
-.paper-card {
-  background: #fff; padding: 16px 20px; border: 1px solid #eee; border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.05); transition: transform .12s, box-shadow .12s;
-}
-.paper-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
-.paper-title  { margin: 0 0 6px 0; font-size: 1.1rem; color: #222; }
-.paper-authors{ margin: 0 0 10px 0; font-size: .95rem; line-height: 1.5; color: #555; }
-.paper-meta   { font-size: .85rem; display: flex; gap: 12px; align-items: center; }
-.paper-link   { color: var(--accent); }
 
-/* ---------- Abstract toggle inside paper cards ---------- */
-.abstract-toggle {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.7rem;      /* smaller */
-  font-style: italic;
-  font-weight: 400;
+
+/* Paper card */
+
+.paper-card {
+  padding: 16px 20px;
+
+  background: #fff;
+
+  border: 1px solid #eee;
+  border-radius: 4px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s;
+}
+
+.paper-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Paper title */
+
+.paper-title {
+  margin: 0 0 6px 0;
+
+  font-size: 1.1rem;
+
+  color: #222;
+}
+
+
+/* Authors */
+
+.paper-authors {
+  margin: 0 0 10px 0;
+
+  font-size: 0.95rem;
+  line-height: 1.5;
+
   color: #555;
-  cursor: pointer;
+}
+
+
+/* Metadata */
+
+.paper-meta {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 0.85rem;
+}
+
+.paper-link {
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   ===================== ABSTRACTS ===========================
+   ========================================================= */
+
+.abstract-toggle {
   display: inline-flex;
   align-items: center;
+
   gap: 6px;
+
+  padding: 0;
+
+  background: none;
+  border: none;
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: 400;
+
+  color: #555;
+
+  cursor: pointer;
+
+  opacity: 0.9;
+
   user-select: none;
 }
 
-.abstract-toggle .triangle {
-  font-size: 0.85em;       /* triangle scales down too */
-  transition: transform .2s ease;
+.abstract-toggle:hover {
+  opacity: 1;
 }
 
-.abstract-toggle.open .triangle { transform: rotate(90deg); }
+.abstract-toggle .triangle {
+  font-size: 0.85em;
 
-.abstract-text { display: none; margin-top: 8px; font-style: normal; font-size: 0.95rem; color: #444; line-height: 1.6; }
-.paper-card.open .abstract-text { display: block; }
+  transition: transform 0.2s ease;
+}
+
+.abstract-toggle.open .triangle {
+  transform: rotate(90deg);
+}
+
+
+/* Hidden abstract */
+
 .abstract-text {
+  display: none;
+
+  margin-top: 8px;
+
   font-size: 0.92rem;
+  font-style: normal;
+
+  line-height: 1.65;
+
   color: #555;
 }
 
-.abstract-toggle { opacity: 0.9; }
-.paper-card:hover .abstract-toggle { opacity: 1; }
-/* ---------- Presented ---------- */
-.paper-presented {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.82rem;   /* smaller than before */
-  opacity: 0.9;
-  margin-top: 6px;
-  color: #666;
+.paper-card.open .abstract-text {
+  display: block;
 }
 
+
+/* Presented at */
+
+.paper-presented {
+  margin-top: 6px;
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.82rem;
+
+  color: #666;
+
+  opacity: 0.9;
+}
+
+
 /* =========================================================
-   ===============  MOBILE  STYLES  =========================
+   ======================== FOOTER ===========================
    ========================================================= */
+
+footer {
+  padding: 16px 0;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+
+  color: #555;
+}
+
+
+/* =========================================================
+   ==================== TABLET / MOBILE ======================
+   ========================================================= */
+
 @media (max-width: 768px) {
 
-  /* Compact header & reduced top gap */
-  header          { padding: 15px 10px; }
-  .content        { margin-top: 20px; }
+  /* -------------------------------------------------------
+     Header
+     ------------------------------------------------------- */
 
-  /* Show hamburger; hide top nav */
-  .top-nav        { display: none; }
-  .hamburger      { display: block; }
-  header h1       { font-size: 2rem; }
+  header {
+    justify-content: space-between;
 
-  /* Sidebar drawer (mobile) */
+    padding: 15px 18px;
+
+    max-width: none;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header nav {
+    margin-left: 0;
+  }
+
+
+  /* Desktop nav hidden */
+
+  .top-nav {
+    display: none;
+  }
+
+
+  /* Hamburger shown */
+
+  .hamburger {
+    display: block;
+  }
+
+
+  /* -------------------------------------------------------
+     Mobile sidebar
+     ------------------------------------------------------- */
+
   .sidebar {
     display: block;
+
     position: fixed;
+
     top: 0;
     left: -240px;
+
     width: 220px;
     height: 100%;
-    background: #fff;
-    border-right: 1px solid #eee;
-    transition: left .3s;
-    z-index: 999;
+
     padding: 20px;
+
+    background: #fff;
+
+    border-right: 1px solid #eee;
+
+    transition: left 0.3s;
+
+    z-index: 999;
   }
-  .sidebar.open   { left: 0; }
+
+  .sidebar.open {
+    left: 0;
+  }
+
   .sidebar nav {
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* align links nearer the top */
-    padding-top: 60px;         
+
+    height: 100%;
+
+    padding-top: 60px;
   }
-  .sidebar ul  { list-style: none; margin: 0; padding: 0; }
-  .sidebar li + li { margin-top: 16px; }
+
+  .sidebar ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .sidebar li + li {
+    margin-top: 16px;
+  }
+
+  .sidebar a {
+    display: block;
+
+    padding: 10px 0;
+  }
+
+
+  /* Overlay */
+
   .overlay {
     display: none;
+
     position: fixed;
+
     inset: 0;
-    background: rgba(0,0,0,0.2);
-    z-index: 998; /* sidebar is 999 */
+
+    background: rgba(0, 0, 0, 0.2);
+
+    z-index: 998;
   }
 
   .overlay.show {
     display: block;
   }
-  .page-container { flex-direction: column; gap: 0; }
 
-  /* Biography image smaller */
-  .bio-photo img  { width: 70%; height: auto; }
-  .bio-photo      { flex: 0 0 100%; max-width: 100%; }
-  .bio-section    { margin-top: 10px; }
 
-  /* Full‑width CV button */
-  .cv-button      { width: 100%; text-align: center; }
+  /* -------------------------------------------------------
+     Page layout
+     ------------------------------------------------------- */
 
-  /* Section card padding slightly tighter */
-  .section-card   { padding: 16px; }
+  .page-container {
+    flex-direction: column;
 
-  /* Research page: single-column grid */
-  .paper-grid     { grid-template-columns: 1fr; }
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .content {
+    width: 100%;
+    max-width: none;
+
+    padding-top: 18px;
+  }
+
+
+  /* -------------------------------------------------------
+     Homepage biography
+     ------------------------------------------------------- */
+
+  .bio-section {
+    flex-direction: column;
+
+    gap: 24px;
+
+    margin-top: 0;
+  }
+
+  .bio-photo {
+    flex: none;
+
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .bio-photo img {
+    width: 70%;
+    max-width: 350px;
+
+    margin: 0 auto;
+  }
+
+  .bio-text {
+    width: 100%;
+  }
+
+
+  /* Profile links */
+
+  .profile-links {
+    flex-direction: column;
+  }
+
+  .cv-button {
+    width: 100%;
+
+    justify-content: center;
+
+    text-align: center;
+  }
+
+
+  /* Cards */
+
+  .section-card {
+    padding: 16px;
+  }
+
+  .paper-card {
+    padding: 15px 16px;
+  }
+
+
+  /* Filters */
+
+  .filter-btn {
+    padding: 8px 14px;
+  }
+
 }
 
 
-@media (max-width:768px){
-  .sidebar a { display:block; padding: 10px 0; }
-  .filter-btn { padding: 8px 14px; }
+/* =========================================================
+   =================== SMALL PHONES ==========================
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  body {
+    font-size: 17px;
+  }
+
+  header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .page-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .bio-photo img {
+    width: 82%;
+  }
+
+  .filter-bar {
+    gap: 10px;
+  }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
