@@ -55,9 +55,9 @@ header {
   margin: 0 auto;
 
   padding:
-    14px
+    18px
     var(--right-padding)
-    14px
+    18px
     var(--left-padding);
 
   border-bottom: 1px solid #ddd;
@@ -65,18 +65,15 @@ header {
 
 header h1 {
   margin: 0;
-
-  font-size: 2.7rem;
+  font-size: 2.8rem;
   font-weight: normal;
-  line-height: 1.1;
-
+  line-height: 1.15;
   color: var(--accent);
-
   white-space: nowrap;
 }
 
 header nav {
-  margin-left: 130px;
+  margin-left: 180px;
 }
 
 .header-link {
