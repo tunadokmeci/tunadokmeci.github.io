@@ -1,185 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Tuna Dökmeci</title>
 
-  <!-- SEO -->
-  <meta
-    name="description"
-    content="Tuna Dökmeci is a PhD candidate in Economics at the European University Institute and is on the 2026–2027 academic job market. His research focuses on labour economics, wage bargaining, firm competition and industrial policy."
-  />
-
+  <meta name="description" content="Tuna Dökmeci is a PhD candidate in Economics at the European University Institute and is on the 2026–2027 academic job market. His research focuses on labour economics, wage bargaining, firm competition and industrial policy." />
   <link rel="canonical" href="https://www.tunadokmeci.com/" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.tunadokmeci.com/" />
+  <meta property="og:title" content="Tuna Dökmeci – PhD Candidate in Economics" />
+  <meta property="og:description" content="PhD candidate at the European University Institute on the 2026–2027 academic job market. Research on labour economics, wage bargaining, firm competition and industrial policy." />
+  <meta property="og:image" content="https://www.tunadokmeci.com/photo.jpg" />
+  <meta property="og:image:alt" content="Portrait of Tuna Dökmeci" />
+  <meta property="og:site_name" content="Tuna Dökmeci" />
 
-  <meta
-    property="og:title"
-    content="Tuna Dökmeci – PhD Candidate in Economics"
-  />
-
-  <meta
-    property="og:description"
-    content="PhD candidate at the European University Institute on the 2026–2027 academic job market. Research on labour economics, wage bargaining, firm competition and industrial policy."
-  />
-
-  <meta
-    property="og:image"
-    content="https://www.tunadokmeci.com/photo.jpg"
-  />
-
-  <meta
-    property="og:image:alt"
-    content="Portrait of Tuna Dökmeci"
-  />
-
-  <!-- Twitter Card -->
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  />
-
-  <meta
-    name="twitter:title"
-    content="Tuna Dökmeci – PhD Candidate in Economics"
-  />
-
-  <meta
-    name="twitter:description"
-    content="PhD candidate at the European University Institute on the 2026–2027 academic job market. Research on labour economics, wage bargaining, firm competition and industrial policy."
-  />
-
-  <meta
-    name="twitter:image"
-    content="https://www.tunadokmeci.com/photo.jpg"
-  />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tuna Dökmeci – PhD Candidate in Economics" />
+  <meta name="twitter:description" content="PhD candidate at the European University Institute on the 2026–2027 academic job market. Research on labour economics, wage bargaining, firm competition and industrial policy." />
+  <meta name="twitter:image" content="https://www.tunadokmeci.com/photo.jpg" />
 
   <link rel="stylesheet" href="styles.css" />
-
 </head>
-
-
 <body>
 
-  <!-- Header -->
-  <header>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1><a class="header-link" href="#home">Tuna Dökmeci</a></h1>
 
-    <h1>
-      <a class="header-link" href="index.html">
-        Tuna Dökmeci
-      </a>
-    </h1>
+      <nav aria-label="Primary navigation">
+        <ul class="top-nav">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+        </ul>
 
-    <nav>
-
-      <ul class="top-nav">
-
-        <li>
-          <a href="index.html" class="active">
-            Home
-          </a>
-        </li>
-
-        <li>
-          <a href="research.html">
-            Research
-          </a>
-        </li>
-
-        <li>
-          <a href="teaching.html">
-            Teaching
-          </a>
-        </li>
-
-      </ul>
-
-      <button
-        class="hamburger"
-        aria-label="Toggle menu"
-        onclick="toggleSidebar()"
-      >
-        ☰
-      </button>
-
-    </nav>
-
+        <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          ☰
+        </button>
+      </nav>
+    </div>
   </header>
 
-
-  <!-- Mobile sidebar -->
-  <aside class="sidebar">
-
-    <nav>
-
+  <aside class="sidebar" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
       <ul>
-
-        <li>
-          <a href="index.html" class="active">
-            Home
-          </a>
-        </li>
-
-        <li>
-          <a href="research.html">
-            Research
-          </a>
-        </li>
-
-        <li>
-          <a href="teaching.html">
-            Teaching
-          </a>
-        </li>
-
+        <li><a href="#home">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#teaching">Teaching</a></li>
       </ul>
-
     </nav>
-
   </aside>
+  <div class="overlay" id="overlay"></div>
 
+  <main class="page-container">
 
-  <!-- Overlay for mobile menu -->
-  <div
-    class="overlay"
-    id="overlay"
-    onclick="closeSidebar()"
-  >
-  </div>
-
-
-  <!-- Main page -->
-  <div class="page-container">
-
-    <main class="content">
-
-
-      <!-- Bio section -->
-      <section class="bio-section">
-
-
-        <!-- Photo -->
+    <section id="home" class="page-section home-section">
+      <div class="bio-section">
         <div class="bio-photo">
-
-          <img
-            src="photo.jpg"
-            alt="Tuna Dökmeci, PhD candidate in Economics at the European University Institute"
-          />
-
+          <img src="photo.jpg" alt="Tuna Dökmeci, PhD candidate in Economics at the European University Institute" />
         </div>
 
-
-        <!-- Bio text -->
         <div class="bio-text">
-
-          <h2>Welcome!</h2>
-
+          <h2>About</h2>
 
           <p>
             I am a PhD candidate in Economics at the European University Institute (EUI).
@@ -187,159 +71,406 @@
             My secondary field is industrial policy.
           </p>
 
-
           <p>
-            <strong>
-              I am on the 2026–2027 academic job market.
-            </strong>
-
-            My
-            <a href="research.html#jmp">
-              Job Market Paper
-            </a>
-            studies how worker bargaining power varies with labour market tightness.
+            <strong>I am on the 2026–2027 academic job market.</strong>
+            My <a href="#jmp">Job Market Paper</a> studies how worker bargaining power varies with labour market tightness.
           </p>
-
 
           <p>
             My supervisors are
-
-            <a
-              href="https://sites.google.com/site/coopereconomics/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Russell Cooper
-            </a>
-
+            <a href="https://sites.google.com/site/coopereconomics/" target="_blank" rel="noopener noreferrer">Russell Cooper</a>
             and
-
-            <a
-              href="https://sites.google.com/view/giacomo-calzolari"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Giacomo Calzolari
-            </a>.
+            <a href="https://sites.google.com/view/giacomo-calzolari" target="_blank" rel="noopener noreferrer">Giacomo Calzolari</a>.
           </p>
-
 
           <p>
             Feel free to contact me at
-
-            <a href="mailto:tuna.dokmeci@eui.eu">
-              tuna.dokmeci@eui.eu
-            </a>.
+            <a href="mailto:tuna.dokmeci@eui.eu">tuna.dokmeci@eui.eu</a>.
           </p>
 
-
-          <!-- CV button -->
           <div class="profile-links">
-
-            <a
-              href="CV_Dökmeci.pdf"
-              target="_blank"
-              rel="noopener"
-              class="cv-button"
-            >
-
-              <span
-                class="btn-icon"
-                aria-hidden="true"
-              >
-                &#128196;
-              </span>
-
+            <a href="CV_Dökmeci.pdf" target="_blank" rel="noopener" class="cv-button">
+              <span class="btn-icon" aria-hidden="true">&#128196;</span>
               CV
-
             </a>
-
           </div>
-
-
         </div>
+      </div>
+    </section>
 
-      </section>
+    <section id="research" class="page-section content-section">
+      <div class="section-heading">
+        <h2>Research</h2>
+      </div>
 
+      <div class="filter-bar" aria-label="Research filters">
+        <button class="filter-btn active" type="button" data-cat="all">All</button>
+        <button class="filter-btn" type="button" data-cat="jmp">Job Market Paper</button>
+        <button class="filter-btn" type="button" data-cat="workingpapers">Working Papers</button>
+        <button class="filter-btn" type="button" data-cat="working">Work in Progress</button>
+        <button class="filter-btn" type="button" data-cat="prephd">Pre-PhD</button>
+        <button class="filter-btn" type="button" data-cat="policy">Policy</button>
+      </div>
 
-      <!-- Structured data for Google -->
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Tuna Dökmeci",
-        "url": "https://www.tunadokmeci.com/",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "European University Institute"
-        },
-        "jobTitle": "PhD Candidate in Economics",
-        "sameAs": [
-          "https://scholar.google.com/citations?user=FmLot44AAAAJ&hl=tr"
-        ]
-      }
-      </script>
+      <div class="paper-area">
+<section id="jmp">
+<h2>Job Market Paper</h2>
+<div class="paper-grid">
+<article class="paper-card jmp">
+<h3 class="paper-title">
+                Bargaining Power and Market Tightness: Theory and Evidence
+              </h3>
+<button aria-expanded="false" class="abstract-toggle">
+<span class="triangle">▸</span>Abstract
+              </button>
+<div class="abstract-text">
+<p>
+                  Worker bargaining power is central to wage determination and varies substantially
+                  across countries, across worker types, and over time. Yet, standard models treat it
+                  as an exogenous fixed parameter, leaving the observed variation in bargaining power
+                  largely unexplained. This paper endogenises bargaining power and shows, in theory
+                  and in the data, that it is an equilibrium object shaped by labour market tightness.
+                  I develop a non-cooperative alternating-offers model in which workers and firms
+                  continue to search while negotiating. In equilibrium, a negotiation's breakdown
+                  risk depends on market conditions, so the worker's surplus share rises with tightness.
+                  Using an instrumental variables approach and French matched employer–employee data,
+                  I test this prediction by estimating how the pass-through of firm productivity to
+                  wages varies with local labour market tightness. The results show that a
+                  one-standard-deviation increase in tightness raises productivity pass-through to
+                  wages by 16%. I further study how this relationship varies across firms of different
+                  sizes and productivity levels.
+                </p>
+</div>
+<p class="paper-presented">
+<em>Presented at (including scheduled):</em>
+                SAEe 2026, Fourth Women in Central Banking Workshop, 41st AIEL Conference, EALE 2026
+              </p>
+<div class="paper-meta">
+<span class="paper-status">Draft coming soon</span>
+</div>
+</article>
+</div>
+</section>
+<section id="workingpapers">
+<h2>Working Papers</h2>
+<div class="paper-grid">
+<!-- State Aid -->
+<article class="paper-card workingpapers">
+<h3 class="paper-title">
+                Effects of State Aid on Firm Performance: Evidence from 22 EU Countries
+              </h3>
+<p class="paper-authors">
+                with Andrea Brasili, Annamaria Tueske, Jochen Schanz
+              </p>
+<button aria-expanded="false" class="abstract-toggle">
+<span class="triangle">▸</span>Abstract
+              </button>
+<div class="abstract-text">
+<p>
+                  Despite renewed interest in industrial policy, empirical evidence on state aid
+                  effectiveness remains limited. We examine the short-run effects of large state aid
+                  awards across 22 EU Member States, linking firm-level data from Orbis with publicly
+                  disclosed awards granted in 2017–2018. Using a generalized difference-in-differences
+                  design, we estimate effects on investment, employment, and productivity. State aid
+                  significantly increases capital investment, particularly among SMEs and firms
+                  receiving regional development aid, which are groups more likely to face financial
+                  constraints. Effects are strongest in Central and Eastern Europe. However, we find
+                  no corresponding improvements in productivity or employment within two years.
+                  These findings suggest that while state aid effectively stimulates investment in
+                  the short run, productivity gains may take longer to materialize, and efficiency
+                  gains could be obtained from better targeting and EU-wide coordination.
+                </p>
+</div>
+<p class="paper-presented">
+<em>Presented at (including scheduled, * if by co-author):</em>
+                OeNB*, DG Grow Research Conference on the Single Market, EUI,
+                Joint Research Centre (JRC) Sevilla
+              </p>
+<div class="paper-meta">
+<a class="paper-link" href="State_Aid_Effects_EU.pdf" rel="noopener" target="_blank">
+                  Draft
+                </a>
+<a class="paper-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6136968" rel="noopener" target="_blank">
+                  SSRN
+                </a>
+</div>
+</article>
+</div>
+</section>
+<section id="working">
+<h2>Work in Progress</h2>
+<div class="paper-grid">
+<!-- Bargaining Theory ------------------------->
+<article class="paper-card working">
+<h3 class="paper-title">
+                Bargaining Power in Frictional Markets:
+                A Microfoundation for Generalised Nash Bargaining
+              </h3>
+<button aria-expanded="false" class="abstract-toggle">
+<span class="triangle">▸</span>Abstract
+              </button>
+<div class="abstract-text">
+<p>
+                  This paper develops a non-cooperative theory of bargaining power in a symmetric
+                  frictional market with buyers and sellers. Agents bargain through alternating offers
+                  while continuing to search for alternative trading partners. When a new partner
+                  arrives, they endogenously decide whether to abandon an ongoing negotiation.
+                  These decisions generate an endogenous risk of breakdown that depends on market
+                  tightness. As market conditions become more favourable to one side of the market,
+                  its equilibrium surplus share increases. The model therefore provides a
+                  microfoundation for bargaining weights that vary systematically with market
+                  conditions rather than being fixed exogenous parameters.
+                </p>
+</div>
+<p class="paper-presented">
+<em>Presented at:</em> EAYE 2026
+              </p>
+<div class="paper-meta">
+<span class="paper-status">Work in progress</span>
+</div>
+</article>
+<!-- Ripple Effect ----------------------------->
+<article class="paper-card working">
+<h3 class="paper-title">
+                The Ripple Effect: Children's Job Insecurity and Parents' Labour and Consumption Choices
+              </h3>
+<p class="paper-authors">
+                with Elena Lazzaro
+              </p>
+<button aria-expanded="false" class="abstract-toggle">
+<span class="triangle">▸</span>Abstract
+              </button>
+<div class="abstract-text">
+<p>
+                  This paper studies the effect of young adults' job insecurity on the consumption
+                  and labour supply decisions of their parents. Using data from the Italian Survey
+                  on Household Income and Wealth (SHIW), we causally estimate this effect by
+                  exploiting a labour market reform ("Fornero reform") that substantially reduced
+                  firing costs for workers in firms with more than 15 employees. According to our
+                  findings, working parents of treated adult children reduced their consumption by
+                  €2,453 per year on average. This effect is driven by the drop in durable consumption,
+                  which yearly decreases by €1,600. Even if we do not find any substantial and
+                  significant effect on the intensive and extensive margins of labour, we observe
+                  that the impact on consumption is stronger for retired parents who are constrained
+                  in their ability to adjust their labour supply and who also reduce their
+                  non-durable expenditures.
+                </p>
+</div>
+<div class="paper-meta">
+<span class="paper-status">Work in progress</span>
+</div>
+</article>
+<!-- Labour Demand ----------------------------->
+<article class="paper-card working">
+<h3 class="paper-title">
+                Labour Demand and Firing Costs under Imperfect Competition:
+                A Non-Monotonic Relationship
+              </h3>
+<button aria-expanded="false" class="abstract-toggle">
+<span class="triangle">▸</span>Abstract
+              </button>
+<div class="abstract-text">
+<p>
+                  In this paper, I analyse the effects of firing costs on job creation and employment
+                  in an oligopolistic setting. I show that quantity competition and strategic
+                  interaction can generate a positive relationship between firing costs and hiring.
+                  The mechanism relies on commitment: when firms face costly lay-offs, they can
+                  credibly commit to higher output, discouraging rivals from expanding. However,
+                  this effect is not monotonic. At low levels, firing costs limit commitment and
+                  deter hiring; at higher levels, they enable firms to lead the market and expand
+                  employment. The model also reveals strategic spillovers, as firms respond not
+                  only to their own constraints but also to their competitors'. These results
+                  challenge the standard view that firing costs necessarily suppress job creation
+                  and highlight the importance of market structure in shaping labour market outcomes.
+                </p>
+</div>
+<div class="paper-meta">
+<span class="paper-status">Work in progress</span>
+</div>
+</article>
+</div>
+</section>
+<section id="prephd">
+<h2>Pre-PhD Work</h2>
+<div class="paper-grid">
+<article class="paper-card prephd">
+<h3 class="paper-title">
+<a class="paper-link" href="https://muse.jhu.edu/pub/50/article/908207" rel="noopener" target="_blank">
+                  Economic Security and Fertility: Evidence from the Mincome Experiment
+                </a>
+</h3>
+<p class="paper-authors">
+                with Carla Rainer, Alyssa Schneebaum
+              </p>
+<div class="paper-meta">
+<span class="paper-year">2023</span>
+<span class="paper-outlet">
+<em>Canadian Public Policy / Analyse de Politiques</em>
+</span>
+</div>
+</article>
+</div>
+</section>
+<section id="policy">
+<h2>Policy Work</h2>
+<div class="paper-grid">
+<article class="paper-card policy">
+<h3 class="paper-title">
+<a class="paper-link" href="https://www.openbookpublishers.com/books/10.11647/obp.0434/chapters/10.11647/obp.0434.02" rel="noopener" target="_blank">
+                  Public Investment and Industrial Policy: A Case for More EU Coordination
+                </a>
+</h3>
+<p class="paper-authors">
+                with Andrea Brasili, Atanas Kolev, Debora Revoltella, Jochen Schanz,
+                Annamaria Tueske, Wouter Van Der Wiele
+              </p>
+<div class="paper-meta">
+<span class="paper-year">2024</span>
+<span class="paper-outlet">
+<em>
+                    Investing in the Structural Transformation:
+                    2024 European Public Investment Outlook
+                  </em>
+</span>
+</div>
+</article>
+</div>
+</section>
+      </div>
+    </section>
 
+    <section id="teaching" class="page-section content-section">
+      <div class="section-heading">
+        <h2>Teaching</h2>
+      </div>
 
-    </main>
+      <p class="section-intro">At the EUI, I have served as teaching assistant, mentor, and tutor across several graduate courses in economics.</p>
 
-  </div>
+      <div class="teaching-experience">
+        <article class="paper-card teaching-card">
+          <h3 class="paper-title">Graduate Microeconomics II — Game Theory</h3>
+          <p class="paper-meta"><time class="paper-year">Fall 2021/22</time></p>
+          <div class="paper-authors">
+            <p>Teaching Assistant for <strong>David K. Levine</strong>.</p>
+            <p>
+              <a class="cv-button" href="Game_Theory_Lecture_Notes_Dokmeci.pdf" title="Download Game Theory Lecture Notes by Tuna Dökmeci (PDF)" target="_blank" rel="noopener">
+                📄&nbsp;Download&nbsp;Lecture&nbsp;Notes
+              </a>
+            </p>
+          </div>
+        </article>
 
+        <article class="paper-card teaching-card">
+          <h3 class="paper-title">Graduate Macroeconomics III — Search &amp; Match</h3>
+          <p class="paper-meta"><time class="paper-year">Spring 2023</time></p>
+          <div class="paper-authors">
+            <p>Teaching Assistant for <strong>Edouard Challe</strong>.</p>
+          </div>
+        </article>
 
-  <!-- Mobile menu script -->
-  <script>
+        <article class="paper-card teaching-card">
+          <h3 class="paper-title">MRes Programme Mentoring &amp; Tutoring</h3>
+          <p class="paper-meta"><time class="paper-year">Academic Year 2022/23</time></p>
+          <div class="paper-authors">
+            <p>Tutor in microeconomics and macroeconomics for Master of Research students.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    function toggleSidebar() {
+  </main>
 
-      const sidebar =
-        document.querySelector('.sidebar');
+  <footer>
+    <p>&copy; 2026 Tuna Dökmeci. PhD Candidate in Economics at European University Institute.</p>
+  </footer>
 
-      const overlay =
-        document.getElementById('overlay');
-
-      sidebar.classList.toggle('open');
-
-      overlay.classList.toggle('show');
-
-    }
-
-
-    function closeSidebar() {
-
-      const sidebar =
-        document.querySelector('.sidebar');
-
-      const overlay =
-        document.getElementById('overlay');
-
-      sidebar.classList.remove('open');
-
-      overlay.classList.remove('show');
-
-    }
-
-
-    document.addEventListener(
-      'DOMContentLoaded',
-      () => {
-
-        document
-          .querySelectorAll('.sidebar a')
-          .forEach(a => {
-
-            a.addEventListener(
-              'click',
-              closeSidebar
-            );
-
-          });
-
-      }
-    );
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tuna Dökmeci",
+    "url": "https://www.tunadokmeci.com/",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "European University Institute"
+    },
+    "jobTitle": "PhD Candidate in Economics",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=FmLot44AAAAJ&hl=tr"
+    ]
+  }
   </script>
 
+  <script>
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('overlay');
+    const hamburger = document.querySelector('.hamburger');
 
+    function setMenu(open) {
+      sidebar.classList.toggle('open', open);
+      overlay.classList.toggle('show', open);
+      sidebar.setAttribute('aria-hidden', String(!open));
+      hamburger.setAttribute('aria-expanded', String(open));
+    }
+
+    hamburger.addEventListener('click', () => {
+      setMenu(!sidebar.classList.contains('open'));
+    });
+
+    overlay.addEventListener('click', () => setMenu(false));
+
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', () => setMenu(false));
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const cat = btn.dataset.cat;
+
+        document.querySelectorAll('#research .paper-card').forEach(card => {
+          card.style.display = (cat === 'all' || card.classList.contains(cat)) ? '' : 'none';
+        });
+
+        document.querySelectorAll('#research .paper-area > section').forEach(section => {
+          const anyVisible = [...section.querySelectorAll('.paper-card')]
+            .some(card => card.style.display !== 'none');
+          section.style.display = anyVisible ? '' : 'none';
+        });
+      });
+    });
+
+    document.querySelectorAll('.abstract-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const card = toggle.closest('.paper-card');
+        const willOpen = !card.classList.contains('open');
+        card.classList.toggle('open', willOpen);
+        toggle.classList.toggle('open', willOpen);
+        toggle.setAttribute('aria-expanded', String(willOpen));
+      });
+    });
+
+    const mainSections = [...document.querySelectorAll('#home, #research, #teaching')];
+    const navLinks = [...document.querySelectorAll('.top-nav a')];
+
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`);
+      });
+    }, {
+      rootMargin: '-28% 0px -58% 0px',
+      threshold: [0, 0.1, 0.25, 0.5]
+    });
+
+    mainSections.forEach(section => observer.observe(section));
+  </script>
 </body>
-
 </html>
