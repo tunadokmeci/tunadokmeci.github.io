@@ -63,6 +63,8 @@
         </div>
 
         <div class="bio-text">
+          <h2>About</h2>
+
           <p>
             I am a PhD candidate in Economics at the European University Institute (EUI).
             I work on labour economics, with a focus on wage bargaining and firm competition.
@@ -90,6 +92,34 @@
             <a href="CV_Dökmeci.pdf" target="_blank" rel="noopener" class="cv-button">
               <span class="btn-icon" aria-hidden="true">&#128196;</span>
               CV
+            </a>
+
+            <a
+              href="mailto:tuna.dokmeci@eui.eu"
+              class="profile-icon-button"
+              aria-label="Email Tuna Dökmeci"
+              title="Email"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 5.5h18v13H3z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+            </a>
+
+            <a
+              href="https://it.linkedin.com/in/tuna-d%C3%B6kmeci-6b526236b"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="profile-icon-button"
+              aria-label="Tuna Dökmeci on LinkedIn"
+              title="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="linkedin-icon">
+                <path d="M5.2 8.2v10.6"></path>
+                <path d="M5.2 5.2h.01"></path>
+                <path d="M10.1 18.8V8.2"></path>
+                <path d="M10.1 12.8c0-2.4 1.6-4.1 3.9-4.1 2.5 0 4.1 1.6 4.1 4.8v5.3"></path>
+              </svg>
             </a>
           </div>
         </div>
@@ -394,7 +424,8 @@
     },
     "jobTitle": "PhD Candidate in Economics",
     "sameAs": [
-      "https://scholar.google.com/citations?user=FmLot44AAAAJ&hl=tr"
+      "https://scholar.google.com/citations?user=FmLot44AAAAJ&hl=tr",
+      "https://it.linkedin.com/in/tuna-d%C3%B6kmeci-6b526236b"
     ]
   }
   </script>
@@ -453,22 +484,32 @@
     const mainSections = [...document.querySelectorAll('#home, #research, #teaching')];
     const navLinks = [...document.querySelectorAll('.top-nav a')];
 
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries
-        .filter(entry => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    function updateActiveNav() {
+      const headerHeight = document.querySelector('.site-header').offsetHeight;
+      const marker = window.scrollY + headerHeight + 70;
 
-      if (!visible) return;
+      let currentSection = mainSections[0];
+
+      for (const section of mainSections) {
+        if (section.offsetTop <= marker) {
+          currentSection = section;
+        } else {
+          break;
+        }
+      }
 
       navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`);
+        link.classList.toggle(
+          'active',
+          link.getAttribute('href') === `#${currentSection.id}`
+        );
       });
-    }, {
-      rootMargin: '-28% 0px -58% 0px',
-      threshold: [0, 0.1, 0.25, 0.5]
-    });
+    }
 
-    mainSections.forEach(section => observer.observe(section));
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    window.addEventListener('resize', updateActiveNav);
+    window.addEventListener('hashchange', updateActiveNav);
+    updateActiveNav();
   </script>
 </body>
 </html>
