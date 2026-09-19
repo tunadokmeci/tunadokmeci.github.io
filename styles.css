@@ -202,6 +202,41 @@ footer {
   color: #fff;
 }
 
+.profile-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  margin-top: 3px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: background .18s, color .18s;
+}
+
+.profile-icon-button:hover,
+.profile-icon-button:focus {
+  background: var(--accent);
+  color: #fff;
+}
+
+.profile-icon-button svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.profile-icon-button .linkedin-icon {
+  stroke-width: 2;
+}
+
 .btn-icon { font-size: .9em; line-height: 1; }
 
 /* Research filters: quiet text tabs */
